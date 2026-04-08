@@ -453,6 +453,67 @@
             font-size: 1.1rem;
         }
         
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        
+        .faq-item h3 {
+            color: #1a365d;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .faq-item h3::before {
+            content: 'Q';
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .faq-item p {
+            color: #4a5568;
+            line-height: 1.8;
+            padding-left: 40px;
+        }
+        
+        .faq-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -476,6 +537,56 @@
             }
         }
     </style>
+    
+    <!-- FAQPage Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is GigaDevice and what products do they offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GigaDevice is a leading fabless semiconductor company specializing in high-performance memory and MCU solutions. Their product portfolio includes GD32 Microcontrollers (ARM Cortex-M and RISC-V cores), SPI NOR/NAND Flash Memory, Sensors, and Analog & Power management ICs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Litong Group an authorized GigaDevice distributor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Litong Group is an officially authorized distributor of GigaDevice products. We provide genuine GigaDevice components with full technical support, competitive pricing, and reliable global supply chain services."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the advantages of choosing GD32 MCUs over other brands?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GD32 MCUs offer several advantages: pin-to-pin compatibility with STM32 for easy migration, cost-effective pricing without compromising performance, comprehensive ecosystem with development tools, and excellent technical support from certified FAE engineers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer local stock and fast delivery?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we maintain local inventory in key markets including the United States (Dallas), Germany (Munich), and China (Shenzhen). This enables us to offer fast delivery times - typically 24-48 hours for local stock and 3-5 days for international shipping."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What technical support services do you provide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide comprehensive technical support including: product selection guidance, schematic review, design-in support, migration assistance from other MCU brands, application notes, reference designs, and direct FAE (Field Application Engineer) consultation."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <header>
