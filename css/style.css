@@ -152,30 +152,40 @@ header nav ul li a:hover {
 }
 
 .btn.primary {
-    background-color: #007bff;
+    background-color: #48bb78;
+    border: 2px solid #48bb78;
 }
 
 .btn.primary:hover {
-    background-color: #0056b3;
+    background-color: #38a169;
+    border-color: #38a169;
+    transform: translateY(-2px);
 }
 
 .btn.secondary {
-    background-color: #6c757d;
+    background-color: transparent;
+    border: 2px solid #fff;
     margin-left: 10px;
 }
 
 .btn.secondary:hover {
-    background-color: #545b62;
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
 }
 
 .btn-link {
-    color: #007bff;
+    color: #48bb78;
     text-decoration: none;
     font-weight: bold;
 }
 
 .btn-link:hover {
     text-decoration: underline;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.1rem;
 }
 
 /* ========================================
