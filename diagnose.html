@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnose Styles</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .debug-info {
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px;
+            font-family: monospace;
+        }
+        .test-box {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h2>CSS Diagnostic</h2>
+        <p>If this box has a gray background, basic styles are working.</p>
+        <p>Check below for hero banner test:</p>
+    </div>
+
+    <!-- Test 1: Basic hero banner -->
+    <section class="hero-banner" style="margin-bottom: 20px;">
+        <div class="container">
+            <h1>Test 1: Basic Hero Banner</h1>
+            <p>This should have blue gradient background</p>
+        </div>
+    </section>
+
+    <!-- Test 2: Hero with SVG -->
+    <section class="hero-banner small-hero has-svg-bg about-banner" style="margin-bottom: 20px;">
+        <div class="container">
+            <h1>Test 2: About Banner with SVG</h1>
+            <p>This should have SVG background pattern</p>
+        </div>
+    </section>
+
+    <!-- Test 3: Check computed styles -->
+    <div class="debug-info">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Right-click on "Test 1" banner above → Inspect</li>
+            <li>Check if element has class "hero-banner"</li>
+            <li>Check Computed styles → background-color</li>
+            <li>Should show gradient or blue color</li>
+        </ol>
+        <p><strong>Current file location:</strong> <span id="location"></span></p>
+        <p><strong>CSS file status:</strong> Check Network tab in DevTools</p>
+    </div>
+
+    <script>
+        document.getElementById('location').textContent = window.location.href;
+    </script>
+</body>
+</html>
