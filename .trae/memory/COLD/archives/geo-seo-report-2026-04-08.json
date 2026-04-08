@@ -1,0 +1,95 @@
+{
+  "archive_id": "geo-seo-report-001",
+  "date": "2026-04-08",
+  "type": "report",
+  "title": "gigadevice Distributor GEO SEO 10章分析报告",
+  
+  "summary": "完整的GEO SEO分析报告，涵盖关键词研究、竞品分析、GEO架构建议等10个章节",
+  
+  "key_findings": [
+    "确定了10个目标国家市场的SEO机会",
+    "识别了核心长尾关键词列表",
+    "分析了主要竞争对手（Arrow, Digi-Key, Mouser, Avnet）的策略",
+    "建立了基于授权代理、本地仓库、本地交货的差异化定位",
+    "制定了多层级关键词策略（Tier 1/2/3 + 长尾词）"
+  ],
+  
+  "report_structure": [
+    {
+      "chapter": 1,
+      "title": "项目概述与目标",
+      "status": "completed"
+    },
+    {
+      "chapter": 2,
+      "title": "关键词研究与分析",
+      "status": "completed"
+    },
+    {
+      "chapter": 3,
+      "title": "竞品分析",
+      "status": "completed"
+    },
+    {
+      "chapter": 4,
+      "title": "GEO架构建议",
+      "status": "completed"
+    },
+    {
+      "chapter": 5,
+      "title": "内容策略",
+      "status": "completed"
+    },
+    {
+      "chapter": 6,
+      "title": "技术SEO建议",
+      "status": "completed"
+    },
+    {
+      "chapter": 7,
+      "title": "本地化策略",
+      "status": "completed"
+    },
+    {
+      "chapter": 8,
+      "title": "链接建设策略",
+      "status": "completed"
+    },
+    {
+      "chapter": 9,
+      "title": "效果衡量指标",
+      "status": "completed"
+    },
+    {
+      "chapter": 10,
+      "title": "执行路线图",
+      "status": "completed"
+    }
+  ],
+  
+  "critical_keywords_from_report": [
+    "gigadevice distributor + [country]",
+    "authorized gigadevice distributor",
+    "gigadevice local distributor",
+    "buy gigadevice + [country]",
+    "gigadevice supplier + [region]",
+    "gigadevice wholesale + [country]",
+    "gigadevice MCU distributor",
+    "gigadevice flash memory distributor",
+    "gigadevice ARM Cortex distributor"
+  ],
+  
+  "strategic_recommendations": [
+    "优先优化高优先级国家（美国、德国、越南、印度）",
+    "建立国家特定着陆页矩阵",
+    "实施hreflang国际化标签",
+    "强化本地SEO信号（地址、电话、本地评价）",
+    "创建多语言内容策略"
+  ],
+  
+  "stored_in": "WARM.json",
+  "references": [
+    "HOT.json - 核心关键词和目标国家",
+    "WARM.json - Topic Clusters和优先级关键词"
+  ]
+}

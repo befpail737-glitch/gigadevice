@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GigaDevice Distributor | Litong</title>
+    <meta name="description" content="Contact Litong Group, an authorized GigaDevice distributor, for sales inquiries, technical support, quotes, and samples.">
+    <meta name="keywords" content="contact Litong, GigaDevice sales, technical support, request quote, apply sample, FAE contact">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Office Cards Grid */
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .office-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #48bb78;
+        }
+        
+        .office-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .office-card h3 {
+            color: #1a365d;
+            margin-bottom: 15px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .office-card .region-badge {
+            display: inline-block;
+            background: #e6fffa;
+            color: #234e52;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .office-card p {
+            color: #4a5568;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .office-card .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .office-card .contact-detail strong {
+            color: #2d3748;
+            min-width: 50px;
+        }
+        
+        .office-card .contact-detail a {
+            color: #48bb78;
+            text-decoration: none;
+        }
+        
+        .office-card .contact-detail a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contact Methods Section */
+        .contact-methods {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: #fff;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+        
+        .contact-methods h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .method-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .method-card .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .method-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .method-card p {
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .method-card a {
+            color: #48bb78;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Quick Contact Bar */
+        .quick-contact-bar {
+            background: #f7fafc;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .quick-contact-bar h2 {
+            margin-bottom: 30px;
+            color: #1a365d;
+        }
+        
+        .quick-contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .quick-contact-buttons .btn {
+            padding: 15px 30px;
+            font-size: 16px;
+        }
+        
+        /* Region Headers */
+        .region-section {
+            margin-top: 50px;
+        }
+        
+        .region-section h3 {
+            color: #1a365d;
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #48bb78;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="svg/logo-litong.svg" alt="Litong Group Logo" width="180" height="50">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="/products.html">Products</a>
+                        <ul class="dropdown">
+                            <li><a href="/products/microcontrollers.html">Microcontrollers</a></li>
+                            <li><a href="/products/flash-memory.html">Flash Memory</a></li>
+                            <li><a href="/products/sensors.html">Sensors</a></li>
+                            <li><a href="/products/analog-power.html">Analog & Power</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/solutions.html">Solutions</a>
+                        <ul class="dropdown">
+                            <li><a href="/solutions/industrial-inverter-servo.html">Industrial Inverter & Servo Control</a></li>
+                            <li><a href="/solutions/tws-charging-case.html">TWS Charging Case</a></li>
+                            <li><a href="/solutions/smart-metering.html">Smart Metering</a></li>
+                            <li><a href="/solutions/automotive-dashboard.html">Automotive Dashboard</a></li>
+                            <li><a href="/solutions/optical-modules.html">Optical Modules</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/support.html">Support</a>
+                        <ul class="dropdown">
+                            <li><a href="/support/selection-guides.html">Selection Guides</a></li>
+                            <li><a href="/support/application-notes.html">Application Notes</a></li>
+                            <li><a href="/support/migration-guides.html">Migration Guides</a></li>
+                            <li><a href="/support/development-tools.html">Development Tools</a></li>
+                            <li><a href="/support/datasheets.html">Datasheets</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/news.html">News</a>
+                        <ul class="dropdown">
+                            <li><a href="/news/corporate.html">Corporate News</a></li>
+                            <li><a href="/news/industry-trends.html">Industry Trends</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li><a href="/contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="page-hero" class="hero-banner small-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with Litong Group for GigaDevice products and support.</p>
+            </div>
+        </section>
+
+        <!-- Quick Contact Bar -->
+        <section class="quick-contact-bar">
+            <div class="container">
+                <h2>How Can We Help You?</h2>
+                <div class="quick-contact-buttons">
+                    <a href="mailto:sales@elec-distributor.com?subject=Quote Request" class="btn primary">Request a Quote</a>
+                    <a href="mailto:technical@elec-distributor.com?subject=Technical Support" class="btn secondary">Technical Support</a>
+                    <a href="mailto:samples@elec-distributor.com?subject=Sample Request" class="btn primary">Request Samples</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Offices Section -->
+        <section id="contact-content" class="section-padding">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/">Home</a> &gt; Contact Us
+                </div>
+                
+                <h2 style="text-align: center; margin-bottom: 10px;">Our Global Offices</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 40px;">Find your local Litong representative</p>
+
+                <!-- Greater China -->
+                <div class="region-section">
+                    <h3>🇨🇳 Greater China Network</h3>
+                    <div class="office-grid">
+                        <div class="office-card">
+                            <span class="region-badge">Headquarters</span>
+                            <h3>🏢 Hong Kong</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>5/F, Green 18, 7 Science Park East Avenue, Hong Kong Science Park, Shatin</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:hk@elec-distributor.com">hk@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Office</span>
+                            <h3>🏢 Beijing</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Room 101-215, 2/F, Building 19, Yard 6, Hengye North 7th Street, Tongzhou District</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:bj@elec-distributor.com">bj@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Office</span>
+                            <h3>🏢 Shanghai</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Room 705-706, Baokuang Intercontinental Business Center, 100 Yutong Road</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:sh@elec-distributor.com">sh@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Office</span>
+                            <h3>🏢 Shenzhen</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Room 306-308, Changping Business Building, 6 Honghua Road, Futian Free Trade Zone</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:sz@elec-distributor.com">sz@elec-distributor.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Americas -->
+                <div class="region-section">
+                    <h3>🌎 Americas</h3>
+                    <div class="office-grid">
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇺🇸 United States</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>1776 K St NW, Washington, D.C. 20006, USA</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>John Smith</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:john.smith@elec-distributor.com">john.smith@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇲🇽 Mexico</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Torre Mayor, Av. P. de la Reforma 505, Cuauhtémoc, 06500 Ciudad de México</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Sofia Hernandez</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:sofia.hernandez@elec-distributor.com">sofia.hernandez@elec-distributor.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Europe -->
+                <div class="region-section">
+                    <h3>🇪🇺 Europe</h3>
+                    <div class="office-grid">
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇩🇪 Germany</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Potsdamer Platz 1, 10785 Berlin, Germany</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Michael Müller</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:michael.muller@elec-distributor.com">michael.muller@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇮🇹 Italy</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Piazzale dell'Industria, 40, 00144 Roma RM, Italy</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Giulia Rossi</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:giulia.rossi@elec-distributor.com">giulia.rossi@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇬🇧 United Kingdom</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>20 Fenchurch St, London EC3M 3BY, United Kingdom</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Emily Jones</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:emily.jones@elec-distributor.com">emily.jones@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇵🇱 Poland</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Warsaw Financial Center, Emilii Plater 53, 00-113 Warszawa</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Anna Kowalska</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:anna.kowalska@elec-distributor.com">anna.kowalska@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇸🇰 Slovakia</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Twin City Tower, Mlynské nivy 10, 821 09 Bratislava</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Peter Horvath</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:peter.horvath@elec-distributor.com">peter.horvath@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇷🇺 Russia</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Federation Tower, Presnenskaya nab., 12, Moscow, 123112</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Ivan Petrov</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:ivan.petrov@elec-distributor.com">ivan.petrov@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇹🇷 Turkey</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Söğütözü, Söğütözü Cd. No:2, Armada Tower, 06510 Çankaya/Ankara</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Elif Yilmaz</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:elif.yilmaz@elec-distributor.com">elif.yilmaz@elec-distributor.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asia-Pacific -->
+                <div class="region-section">
+                    <h3>🌏 Asia-Pacific</h3>
+                    <div class="office-grid">
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇦🇺 Australia</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Australia Square, Level 33, 264 George Street, Sydney NSW 2000</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Liam Wilson</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:liam.wilson@elec-distributor.com">liam.wilson@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇯🇵 Japan</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Marunouchi Park Building, 2-6-1 Marunouchi, Chiyoda-ku, Tokyo 100-0005</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Ken Tanaka</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:ken.tanaka@elec-distributor.com">ken.tanaka@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇰🇷 South Korea</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Gangnam Finance Center, 152 Teheran-ro, Gangnam-gu, Seoul</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Seojoon Park</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:seojoon.park@elec-distributor.com">seojoon.park@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇮🇳 India</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Worldmark 1, Aerocity, Indira Gandhi International Airport, New Delhi, 110037</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Priya Sharma</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:priya.sharma@elec-distributor.com">priya.sharma@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇻🇳 Vietnam</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Lotte Center Hanoi, 54 Liễu Giai, Cống Vị, Ba Đình, Hà Nội</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>An Nguyen</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:an.nguyen@elec-distributor.com">an.nguyen@elec-distributor.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="office-card">
+                            <span class="region-badge">Sales Office</span>
+                            <h3>🇲🇾 Malaysia</h3>
+                            <div class="contact-detail">
+                                <strong>📍</strong>
+                                <span>Petronas Twin Tower 1, Kuala Lumpur City Centre, 50088 Kuala Lumpur</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>👤</strong>
+                                <span>Siti Nurhaliza</span>
+                            </div>
+                            <div class="contact-detail">
+                                <strong>📧</strong>
+                                <a href="mailto:siti.nurhaliza@elec-distributor.com">siti.nurhaliza@elec-distributor.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods Section -->
+        <section class="contact-methods">
+            <div class="container">
+                <h2>Quick Contact Methods</h2>
+                <div class="methods-grid">
+                    <div class="method-card">
+                        <div class="icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>For general inquiries and quotes</p>
+                        <a href="mailto:sales@elec-distributor.com">sales@elec-distributor.com</a>
+                    </div>
+                    <div class="method-card">
+                        <div class="icon">💬</div>
+                        <h3>WhatsApp</h3>
+                        <p>Quick messaging for urgent matters</p>
+                        <a href="https://wa.me/8615013702378">+86 150 1370 2378</a>
+                    </div>
+                    <div class="method-card">
+                        <div class="icon">📱</div>
+                        <h3>WeChat</h3>
+                        <p>Connect with us on WeChat</p>
+                        <a href="#">+86 186 1251 8271</a>
+                    </div>
+                    <div class="method-card">
+                        <div class="icon">🔧</div>
+                        <h3>Technical Support</h3>
+                        <p>For FAE and technical questions</p>
+                        <a href="mailto:technical@elec-distributor.com">technical@elec-distributor.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/solutions.html">Solutions</a></li>
+                    <li><a href="/support.html">Support</a></li>
+                    <li><a href="/news.html">News</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li><a href="/contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <!-- Social media icons will go here -->
+            </div>
+            <p>&copy; 2025 Litong Group. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

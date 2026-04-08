@@ -1,0 +1,88 @@
+{
+  "archive_id": "seo-geo-report-v2-001",
+  "date": "2026-04-08",
+  "type": "report",
+  "title": "GigaDevice Distributor SEO/GEO 10章分析报告 v2.0",
+  "report_file": "SEO_GEO_Analysis_Report.md",
+
+  "summary": "基于深度关键词研究、竞品分析和GEO本地化策略的完整SEO/GEO分析报告，涵盖13个目标国家，43个长尾关键词，重点突出价格优势、本地仓库、快速交付三大核心竞争力",
+
+  "key_findings": [
+    "识别了43个高价值长尾关键词，按6大分类体系组织",
+    "分析了4个国际巨头级竞品（Mouser、Digi-Key、Arrow、Avnet）和多个区域竞品",
+    "确定了13个目标国家市场的优先级（P0/P1/P2）和搜索量占比",
+    "建立了基于价格优势、本地仓库、快速交付的差异化定位策略",
+    "制定了6个月的3阶段执行路线图",
+    "设计了完整的KPI体系和转化跟踪机制"
+  ],
+
+  "report_chapters": [
+    {"chapter": 1, "title": "关键词概述与竞争格局", "status": "completed", "key_content": "核心关键词矩阵、13国搜索量占比、竞品格局分析"},
+    {"chapter": 2, "title": "长尾关键词挖掘（6大分类）", "status": "completed", "key_content": "43个长尾关键词，含地域型、混合地域型、产品/应用型、授权/信任型、交易/服务型、问题/痛点型"},
+    {"chapter": 3, "title": "用户搜索意图分析", "status": "completed", "key_content": "搜索意图金字塔、各国搜索意图差异分析"},
+    {"chapter": 4, "title": "用户痛点深度分析", "status": "completed", "key_content": "7大核心痛点矩阵、用户决策旅程地图"},
+    {"chapter": 5, "title": "竞争对手深度对比", "status": "completed", "key_content": "Mouser/Digi-Key详细对比、竞争优势雷达图"},
+    {"chapter": 6, "title": "SEO优化建议", "status": "completed", "key_content": "On-Page模板、技术SEO清单、部署平台推荐"},
+    {"chapter": 7, "title": "转化与跟踪机制", "status": "completed", "key_content": "CTA优化策略、KPI指标体系、GA4跟踪配置"},
+    {"chapter": 8, "title": "风险警示与行动计划", "status": "completed", "key_content": "风险矩阵、分阶段执行时间表、月度里程碑"},
+    {"chapter": 9, "title": "GEO专属优化策略", "status": "completed", "key_content": "Hreflang实施、多地域架构、Google Business优化、本地目录"},
+    {"chapter": 10, "title": "数据来源与方法说明", "status": "completed", "key_content": "数据来源、研究方法、报告局限性、后续更新计划"}
+  ],
+
+  "critical_keywords": {
+    "p0_priority": [
+      "gigadevice distributor USA",
+      "gigadevice distributor Germany",
+      "gigadevice distributor India",
+      "authorized gigadevice distributor",
+      "gigadevice fast delivery",
+      "gigadevice MCU distributor"
+    ],
+    "p1_priority": [
+      "gigadevice distributor Vietnam",
+      "gigadevice distributor Japan",
+      "gigadevice distributor Korea",
+      "gigadevice flash memory distributor",
+      "gigadevice local stock"
+    ],
+    "long_tail_high_value": [
+      "authorized gigadevice distributor with local warehouse",
+      "gigadevice distributor same day delivery",
+      "buy gigadevice in USA with local stock",
+      "gigadevice GD32 distributor fast shipping"
+    ]
+  },
+
+  "strategic_recommendations": [
+    "优先优化P0级国家：美国、德国、印度（占搜索量52%）",
+    "重点布局43个长尾关键词，每个词配置独立Landing Page",
+    "实施子目录式多地域架构，配置完整hreflang标签",
+    "建立Google Business Profile矩阵（13个国家）",
+    "差异化竞争：强调价格优势（低15-30%）、本地交付（24-72小时）、正品保证",
+    "6个月内实现有机流量+50%，询盘转化率>3%"
+  ],
+
+  "competitive_advantages": {
+    "price_advantage": "比Mouser/Digi-Key低15-30%",
+    "delivery_advantage": "本地仓库24-72小时交付",
+    "authenticity_advantage": "官方授权100%正品保证",
+    "flexibility_advantage": "1片起订，无MOQ门槛",
+    "service_advantage": "本地技术支持团队"
+  },
+
+  "execution_summary": {
+    "phase_1_months": "1-2",
+    "phase_1_focus": "基础建设：技术SEO、美国/德国页面、GBP设置",
+    "phase_2_months": "3-4",
+    "phase_2_focus": "扩展优化：印度/越南/日本/韩国页面、内容批量生产",
+    "phase_3_months": "5-6",
+    "phase_3_focus": "规模化：剩余国家页面、数据复盘优化"
+  },
+
+  "stored_in": "WARM.json",
+  "references": [
+    "HOT.json - 核心关键词和目标国家",
+    "WARM.json - 完整的关键词策略、竞品分析、执行路线图",
+    "SEO_GEO_Analysis_Report.md - 完整10章报告文档"
+  ]
+}

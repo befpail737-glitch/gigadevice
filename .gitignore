@@ -1,0 +1,26 @@
+# Development documentation files
+*.txt
+product_design/
+product_development_plan.md
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS-specific
+.Spotlight-V100
+.Trashes
+ehthumbs.db
