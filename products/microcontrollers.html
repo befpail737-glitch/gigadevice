@@ -371,4 +371,357 @@
         }
         
         .cta-section h2 {
-            font-size: 2.
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .fae-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-table {
+                font-size: 0.85rem;
+            }
+            
+            .product-table th,
+            .product-table td {
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="../svg/logo-litong.svg" alt="Litong Group Logo" width="180" height="50">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="/products.html">Products</a>
+                        <ul class="dropdown">
+                            <li><a href="/products/microcontrollers.html">Microcontrollers</a></li>
+                            <li><a href="/products/flash-memory.html">Flash Memory</a></li>
+                            <li><a href="/products/sensors.html">Sensors</a></li>
+                            <li><a href="/products/analog-power.html">Analog & Power</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/solutions.html">Solutions</a>
+                        <ul class="dropdown">
+                            <li><a href="/solutions/industrial-inverter-servo.html">Industrial Inverter & Servo Control</a></li>
+                            <li><a href="/solutions/tws-charging-case.html">TWS Charging Case</a></li>
+                            <li><a href="/solutions/smart-metering.html">Smart Metering</a></li>
+                            <li><a href="/solutions/automotive-dashboard.html">Automotive Dashboard</a></li>
+                            <li><a href="/solutions/optical-modules.html">Optical Modules</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/support.html">Support</a>
+                        <ul class="dropdown">
+                            <li><a href="/support/selection-guides.html">Selection Guides</a></li>
+                            <li><a href="/support/application-notes.html">Application Notes</a></li>
+                            <li><a href="/support/migration-guides.html">Migration Guides</a></li>
+                            <li><a href="/support/development-tools.html">Development Tools</a></li>
+                            <li><a href="/support/datasheets.html">Datasheets</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/news.html">News</a>
+                        <ul class="dropdown">
+                            <li><a href="/news/corporate.html">Corporate News</a></li>
+                            <li><a href="/news/industry-trends.html">Industry Trends</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li><a href="/contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="product-hero">
+            <div class="container">
+                <div class="product-hero-content">
+                    <h1>GD32 Microcontrollers</h1>
+                    <p>High-performance, low-power MCUs featuring ARM Cortex-M and RISC-V cores</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="overview-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/">Home</a> &gt; <a href="/products.html">Products</a> &gt; Microcontrollers
+                </div>
+                <div class="section-header">
+                    <h2>GD32 MCU Series Overview</h2>
+                    <p>Comprehensive portfolio of 32-bit microcontrollers for diverse applications</p>
+                </div>
+                <p class="overview-text">GigaDevice GD32 Microcontrollers offer a broad portfolio of 32-bit general-purpose microcontrollers powered by ARM® Cortex®-M3, Cortex®-M4, Cortex®-M23, Cortex®-M33, Cortex®-M7 processors, and the revolutionary RISC-V core. As an authorized GD32 MCU distributor, Litong Group provides these high-performance, low-power, and cost-effective solutions.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🖥️</div>
+                        <h3>Diverse Core Options</h3>
+                        <p>ARM Cortex-M3/M4/M23/M33/M7 and RISC-V for flexible design choices</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>High Performance</h3>
+                        <p>Up to 200MHz+ CPU frequency for demanding applications</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔋</div>
+                        <h3>Low Power</h3>
+                        <p>Advanced power management for battery-powered devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔌</div>
+                        <h3>Rich Peripherals</h3>
+                        <p>Comprehensive communication interfaces and analog functions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>Ecosystem Ready</h3>
+                        <p>Extensive development tools and software libraries</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Cost Effective</h3>
+                        <p>Competitive pricing without compromising performance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Table Section -->
+        <section class="products-table-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Popular GD32 MCU Models</h2>
+                    <p>Browse our selection of high-performance microcontrollers</p>
+                </div>
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>GD32 MCU Model Table</h3>
+                    </div>
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>Part Number</th>
+                                <th>Core</th>
+                                <th>Speed</th>
+                                <th>Flash</th>
+                                <th>RAM</th>
+                                <th>Package</th>
+                                <th>I/O</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="part-number">GD32F103C8T6</td>
+                                <td>Cortex-M3</td>
+                                <td>108 MHz</td>
+                                <td>64 KB</td>
+                                <td>20 KB</td>
+                                <td>LQFP48</td>
+                                <td>37</td>
+                                <td><a href="/products/gd32f103c8t6.html" class="btn-table">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td class="part-number">GD32E230F6P6</td>
+                                <td>Cortex-M23</td>
+                                <td>72 MHz</td>
+                                <td>32 KB</td>
+                                <td>4 KB</td>
+                                <td>TSSOP20</td>
+                                <td>17</td>
+                                <td><a href="/products/gd32e230f6p6.html" class="btn-table">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td class="part-number">GD32VF103CBT6</td>
+                                <td>RISC-V</td>
+                                <td>108 MHz</td>
+                                <td>128 KB</td>
+                                <td>32 KB</td>
+                                <td>LQFP48</td>
+                                <td>37</td>
+                                <td><a href="/products/gd32vf103cbt6.html" class="btn-table">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td class="part-number">GD32F303VCT6</td>
+                                <td>Cortex-M4</td>
+                                <td>120 MHz</td>
+                                <td>256 KB</td>
+                                <td>48 KB</td>
+                                <td>LQFP100</td>
+                                <td>80</td>
+                                <td><a href="/products/gd32f303vct6.html" class="btn-table">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td class="part-number">GD32F450VGT6</td>
+                                <td>Cortex-M4</td>
+                                <td>200 MHz</td>
+                                <td>512 KB</td>
+                                <td>128 KB</td>
+                                <td>LQFP100</td>
+                                <td>82</td>
+                                <td><a href="/products/gd32f450vgt6.html" class="btn-table">Details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Selection Guides & Resources</h2>
+                    <p>Tools to help you choose the right MCU</p>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon-box">📋</div>
+                        <div class="resource-info">
+                            <h4>GD32 vs STM32 Cross Reference</h4>
+                            <p>Compare GD32 and STM32 series for easy migration planning</p>
+                            <a href="/support/gd32-vs-stm32-cross-reference.html" class="resource-link">View Guide →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon-box">🎯</div>
+                        <div class="resource-info">
+                            <h4>MCU Selection Guide</h4>
+                            <p>Learn how to choose the right GD32 MCU for your application</p>
+                            <a href="/support/how-to-choose-gd32-mcu.html" class="resource-link">View Guide →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon-box">📄</div>
+                        <div class="resource-info">
+                            <h4>Technical Datasheets</h4>
+                            <p>Download complete specifications and electrical characteristics</p>
+                            <a href="/support/datasheets.html" class="resource-link">Download →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAE Section -->
+        <section class="fae-section">
+            <div class="container">
+                <div class="fae-card">
+                    <div class="fae-content">
+                        <h3>FAE Expert Insight: GD32F103 Series</h3>
+                        <p>The GD32F103 series, based on the ARM Cortex-M3 core, is a highly popular choice for a wide range of applications due to its excellent balance of performance, peripherals, and cost-effectiveness.</p>
+                        <p>Its pin-to-pin compatibility with STM32F103 makes it an ideal alternative for many existing designs, offering enhanced performance and competitive pricing.</p>
+                        <div class="fae-highlight">
+                            <h4>Recommended Applications</h4>
+                            <p>Industrial control, motor drives, consumer electronics, and IoT devices</p>
+                        </div>
+                    </div>
+                    <div class="fae-visual">
+                        <div class="fae-visual-icon">👨‍💻</div>
+                        <p>Need help selecting the right MCU?</p>
+                        <a href="/contact-us.html?inquiry=technical" class="btn secondary">Consult Our FAE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Common questions about GD32 MCUs</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Can GD32F103 directly replace STM32F103?</h3>
+                        <p>Yes, in many cases, GD32F103 series MCUs are pin-to-pin and software compatible with STM32F103 series, offering a seamless migration path with potential performance improvements.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What development environments support GD32 MCUs?</h3>
+                        <p>GD32 MCUs are supported by mainstream IDEs like Keil MDK, IAR EWARM, and GCC-based toolchains. GigaDevice also provides its own GD32 IDE for comprehensive development support.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are GD32 MCUs suitable for automotive applications?</h3>
+                        <p>Yes, GigaDevice offers automotive-grade GD32 MCUs that are AEC-Q100 qualified, making them suitable for various automotive applications including body control, dashboard, and sensor interfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact us for datasheets, samples, BOM matching, or technical consultation</p>
+                    <div class="cta-buttons">
+                        <a href="/contact-us.html?inquiry=datasheet&product=GD32MCU" class="btn primary">Download Datasheet</a>
+                        <a href="/contact-us.html?inquiry=sample&product=GD32MCU" class="btn secondary">Request Sample</a>
+                        <a href="/contact-us.html?inquiry=bom&product=GD32MCU" class="btn primary">BOM Matching</a>
+                        <a href="/contact-us.html?inquiry=technical&product=GD32MCU" class="btn secondary">Technical Consult</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/solutions.html">Solutions</a></li>
+                    <li><a href="/support.html">Support</a></li>
+                    <li><a href="/news.html">News</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li><a href="/contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <!-- Social media icons will go here -->
+            </div>
+            <p>&copy; 2025 Litong Group. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

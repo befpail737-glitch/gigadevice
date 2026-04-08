@@ -7,6 +7,410 @@
     <meta name="description" content="Explore GigaDevice SPI NOR/NAND Flash Memory solutions offered by Litong. High-performance, reliable, and secure storage for embedded systems.">
     <meta name="keywords" content="GigaDevice Flash distributor, SPI NOR Flash, SPI NAND Flash, GD25Q, GD5F, Litong">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Product Category Page Styles */
+        
+        /* Hero Section */
+        .product-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .product-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .product-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .product-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Overview Section */
+        .overview-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-header h2 {
+            color: #1a365d;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+        
+        .overview-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 50px;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #48bb78;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .feature-card h3 {
+            color: #1a365d;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Product Table Section */
+        .products-table-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .table-container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .table-header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 25px 30px;
+        }
+        
+        .table-header h3 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .product-table th {
+            background: #f7fafc;
+            color: #1a365d;
+            font-weight: 600;
+            padding: 18px 15px;
+            text-align: left;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .product-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #edf2f7;
+            color: #4a5568;
+        }
+        
+        .product-table tr:hover {
+            background: #f7fafc;
+        }
+        
+        .product-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .part-number {
+            font-weight: 600;
+            color: #1a365d;
+        }
+        
+        .btn-table {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #48bb78;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-table:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .resource-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .resource-icon-box {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .resource-info h4 {
+            color: #1a365d;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .resource-info p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .resource-link {
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        /* FAE Section */
+        .fae-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .fae-card {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 20px;
+            padding: 50px;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .fae-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .fae-content p {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .fae-highlight {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 25px;
+        }
+        
+        .fae-highlight h4 {
+            color: #48bb78;
+            margin-bottom: 10px;
+        }
+        
+        .fae-visual {
+            text-align: center;
+        }
+        
+        .fae-visual-icon {
+            font-size: 6rem;
+            margin-bottom: 20px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .faq-item h3 {
+            color: #1a365d;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-item h3::before {
+            content: 'Q:';
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        .faq-item p {
+            color: #4a5568;
+            line-height: 1.7;
+            padding-left: 30px;
+        }
+        
+        .faq-item p::before {
+            content: 'A: ';
+            color: #1a365d;
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .fae-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-table {
+                font-size: 0.85rem;
+            }
+            
+            .product-table th,
+            .product-table td {
+                padding: 12px 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,102 +467,232 @@
     </header>
 
     <main>
-        <section id="page-hero" class="hero-banner small-hero has-svg-bg products-banner">
+        <!-- Hero Section -->
+        <section class="product-hero">
             <div class="container">
-                <h1>Flash Memory</h1>
-                <p>Reliable and high-performance SPI NOR/NAND Flash solutions.</p>
+                <div class="product-hero-content">
+                    <h1>Flash Memory</h1>
+                    <p>Reliable SPI NOR/NAND Flash solutions for embedded systems</p>
+                </div>
             </div>
         </section>
 
-        <section id="flash-category-overview" class="section-padding">
+        <!-- Overview Section -->
+        <section class="overview-section">
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/">Home</a> &gt; <a href="/products.html">Products</a> &gt; Flash Memory
                 </div>
-                <h2>GigaDevice Flash Memory Series Overview</h2>
-                <p>GigaDevice offers a comprehensive portfolio of SPI NOR and SPI NAND Flash memory products, designed to meet the demanding requirements of various embedded applications. As an authorized GigaDevice Flash distributor, Litong Group provides high-performance, high-reliability, and cost-effective storage solutions. GigaDevice Flash memory is widely used in consumer electronics, industrial control, automotive electronics, and IoT devices, offering fast boot-up, secure storage, and extended endurance.</p>
+                <div class="section-header">
+                    <h2>GigaDevice Flash Memory Overview</h2>
+                    <p>High-performance storage solutions for diverse applications</p>
+                </div>
+                <p class="overview-text">GigaDevice offers a comprehensive portfolio of SPI NOR and SPI NAND Flash memory products, designed to meet the demanding requirements of various embedded applications. As an authorized GigaDevice Flash distributor, Litong Group provides high-performance, high-reliability, and cost-effective storage solutions.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Wide Range</h3>
+                        <p>SPI NOR Flash (GD25Q, GD25B, GD25LB) and SPI NAND Flash (GD5F)</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>High Performance</h3>
+                        <p>Fast read/write speeds and efficient data transfer rates</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>High Reliability</h3>
+                        <p>Excellent data retention and endurance for critical apps</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Security Features</h3>
+                        <p>Integrated security functions for data protection</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Diverse Packages</h3>
+                        <p>Various package types to suit different design constraints</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌡️</div>
+                        <h3>Industrial Grade</h3>
+                        <p>Extended temperature range for harsh environments</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <h3>Key Features & Advantages:</h3>
-                <ul>
-                    <li>**Wide Range**: SPI NOR Flash (GD25Q, GD25B, GD25LB series) and SPI NAND Flash (GD5F series).</li>
-                    <li>**High Performance**: Fast read/write speeds and efficient data transfer.</li>
-                    <li>**High Reliability**: Excellent data retention and endurance for critical applications.</li>
-                    <li>**Security Features**: Integrated security functions for data protection.</li>
-                    <li>**Diverse Packages**: Available in various package types to suit different design constraints.</li>
-                </ul>
-
-                <h2>GigaDevice Flash Memory Model Table</h2>
-                <!-- Implement Product Schema.org structured data for each product in the table -->
-                <div class="table-responsive">
+        <!-- Product Table Section -->
+        <section class="products-table-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Popular Flash Memory Models</h2>
+                    <p>Browse our selection of high-performance Flash memory</p>
+                </div>
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>GigaDevice Flash Memory Model Table</h3>
+                    </div>
                     <table class="product-table">
                         <thead>
                             <tr>
-                                <th>Part No.</th>
-                                <th>Density (Mb)</th>
-                                <th>Voltage (V)</th>
+                                <th>Part Number</th>
+                                <th>Density</th>
+                                <th>Voltage</th>
                                 <th>Interface</th>
                                 <th>Package</th>
-                                <th>Temp Grade</th>
+                                <th>Grade</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>GD25Q64CSIG</td>
-                                <td>64</td>
-                                <td>2.7-3.6</td>
+                                <td class="part-number">GD25Q64CSIG</td>
+                                <td>64 Mb</td>
+                                <td>2.7-3.6V</td>
                                 <td>SPI/QSPI</td>
                                 <td>SOP8</td>
                                 <td>Industrial</td>
-                                <td><a href="/products/gd25q64csig.html" class="btn-link">Details</a></td>
+                                <td><a href="/products/gd25q64csig.html" class="btn-table">Details</a></td>
                             </tr>
                             <tr>
-                                <td>GD25Q128CSIG</td>
-                                <td>128</td>
-                                <td>2.7-3.6</td>
+                                <td class="part-number">GD25Q128CSIG</td>
+                                <td>128 Mb</td>
+                                <td>2.7-3.6V</td>
                                 <td>SPI/QSPI</td>
                                 <td>SOP8</td>
                                 <td>Industrial</td>
-                                <td><a href="/products/gd25q128csig.html" class="btn-link">Details</a></td>
+                                <td><a href="/products/gd25q128csig.html" class="btn-table">Details</a></td>
                             </tr>
                             <tr>
-                                <td>GD5F1GQ4UBYIG</td>
-                                <td>1024</td>
-                                <td>2.7-3.6</td>
+                                <td class="part-number">GD25Q256CYIG</td>
+                                <td>256 Mb</td>
+                                <td>2.7-3.6V</td>
+                                <td>SPI/QSPI</td>
+                                <td>WSON8</td>
+                                <td>Industrial</td>
+                                <td><a href="/products/gd25q256cyig.html" class="btn-table">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td class="part-number">GD5F1GQ4UBYIG</td>
+                                <td>1 Gb</td>
+                                <td>2.7-3.6V</td>
                                 <td>SPI NAND</td>
                                 <td>WSON8</td>
                                 <td>Industrial</td>
-                                <td><a href="/products/gd5f1gq4ubyig.html" class="btn-link">Details</a></td>
+                                <td><a href="/products/gd5f1gq4ubyig.html" class="btn-table">Details</a></td>
                             </tr>
-                            <!-- More rows will be added dynamically or manually -->
+                            <tr>
+                                <td class="part-number">GD25LB256DSIG</td>
+                                <td>256 Mb</td>
+                                <td>1.65-3.6V</td>
+                                <td>SPI</td>
+                                <td>SOP8</td>
+                                <td>Industrial</td>
+                                <td><a href="/products/gd25lb256dsig.html" class="btn-table">Details</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </section>
 
-                <h2>Selection Guides & Resources</h2>
-                <ul>
-                    <li><a href="/support/how-to-choose-spi-nor-flash.html" class="btn-link">How to Choose the Right SPI NOR Flash</a></li>
-                    <li><a href="/support/gd25q-series-datasheet.html" class="btn-link">GD25Q Series Datasheet</a></li>
-                </ul>
-
-                <h2>FAE Interpretation: GD25Q Series</h2>
-                <p>The GD25Q series of SPI NOR Flash is a cornerstone of GigaDevice's memory portfolio, offering a robust combination of performance, reliability, and cost-effectiveness. Its wide density range and various package options make it suitable for a vast array of applications, from simple boot code storage to complex data logging. Our FAEs frequently recommend the GD25Q for its proven track record and ease of integration.</p>
-
-                <h2>Frequently Asked Questions (FAQ)</h2>
-                <div class="faq-item">
-                    <h3>Q: What is the maximum erase/write cycle count for GD25Q series?</h3>
-                    <p>A: The GD25Q series typically offers 100,000 program/erase cycles, ensuring long-term reliability for most applications.</p>
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Selection Guides & Resources</h2>
+                    <p>Tools to help you choose the right Flash memory</p>
                 </div>
-                <div class="faq-item">
-                    <h3>Q: Does GigaDevice offer automotive-grade Flash memory?</h3>
-                    <p>A: Yes, GigaDevice provides automotive-grade Flash memory, such as the GD25/GD55 series, designed to meet the stringent requirements of automotive applications.</p>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon-box">📋</div>
+                        <div class="resource-info">
+                            <h4>SPI NOR Flash Selection Guide</h4>
+                            <p>Learn how to select the right SPI NOR Flash for your application</p>
+                            <a href="/support/how-to-choose-spi-nor-flash.html" class="resource-link">View Guide →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon-box">📄</div>
+                        <div class="resource-info">
+                            <h4>GD25Q Series Datasheet</h4>
+                            <p>Complete technical specifications for GD25Q series</p>
+                            <a href="/support/gd25q-series-datasheet.html" class="resource-link">Download →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon-box">🔄</div>
+                        <div class="resource-info">
+                            <h4>Migration Guide</h4>
+                            <p>Transition from competitor Flash to GigaDevice solutions</p>
+                            <a href="/support/flash-migration-guide.html" class="resource-link">View Guide →</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="cta-section text-center mt-4">
-                    <a href="/contact-us.html?inquiry=datasheet&product=FlashMemory" class="btn primary">Download Datasheet</a>
-                    <a href="/contact-us.html?inquiry=sample&product=FlashMemory" class="btn secondary">Apply for Sample</a>
-                    <a href="/contact-us.html?inquiry=bom&product=FlashMemory" class="btn primary">BOM Matching</a>
-                    <a href="/contact-us.html?inquiry=technical&product=FlashMemory" class="btn secondary">Technical Consultation</a>
+        <!-- FAE Section -->
+        <section class="fae-section">
+            <div class="container">
+                <div class="fae-card">
+                    <div class="fae-content">
+                        <h3>FAE Expert Insight: GD25Q Series</h3>
+                        <p>The GD25Q series of SPI NOR Flash is a cornerstone of GigaDevice's memory portfolio, offering a robust combination of performance, reliability, and cost-effectiveness.</p>
+                        <p>Its wide density range and various package options make it suitable for a vast array of applications, from simple boot code storage to complex data logging.</p>
+                        <div class="fae-highlight">
+                            <h4>Key Applications</h4>
+                            <p>Code storage, data logging, configuration storage, and firmware updates</p>
+                        </div>
+                    </div>
+                    <div class="fae-visual">
+                        <div class="fae-visual-icon">👨‍💻</div>
+                        <p>Need help selecting Flash memory?</p>
+                        <a href="/contact-us.html?inquiry=technical" class="btn secondary">Consult Our FAE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Common questions about GigaDevice Flash</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>What is the maximum erase/write cycle count?</h3>
+                        <p>The GD25Q series typically offers 100,000 program/erase cycles, ensuring long-term reliability for most applications.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does GigaDevice offer automotive-grade Flash?</h3>
+                        <p>Yes, GigaDevice provides automotive-grade Flash memory, such as the GD25/GD55 series, designed to meet stringent automotive requirements.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between SPI NOR and SPI NAND?</h3>
+                        <p>SPI NOR offers faster random access and is ideal for code execution, while SPI NAND provides higher density at lower cost, suitable for data storage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact us for datasheets, samples, BOM matching, or technical consultation</p>
+                    <div class="cta-buttons">
+                        <a href="/contact-us.html?inquiry=datasheet&product=FlashMemory" class="btn primary">Download Datasheet</a>
+                        <a href="/contact-us.html?inquiry=sample&product=FlashMemory" class="btn secondary">Request Sample</a>
+                        <a href="/contact-us.html?inquiry=bom&product=FlashMemory" class="btn primary">BOM Matching</a>
+                        <a href="/contact-us.html?inquiry=technical&product=FlashMemory" class="btn secondary">Technical Consult</a>
+                    </div>
                 </div>
             </div>
         </section>

@@ -7,6 +7,299 @@
     <meta name="description" content="GigaDevice-based solution for Industrial Inverter & Servo Control, featuring GD32F303/F450 MCUs for high-performance and precise motor control.">
     <meta name="keywords" content="Industrial Inverter, Servo Control, GD32F303, GD32F450, GigaDevice solution, Litong">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Solution Detail Page Styles */
+        
+        /* Hero Section */
+        .solution-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .solution-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .solution-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .solution-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Summary Section */
+        .summary-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-header h2 {
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+        
+        .summary-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #4a5568;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Advantages Section */
+        .advantages-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .advantage-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border-left: 5px solid #48bb78;
+            transition: all 0.3s ease;
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .advantage-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .advantage-card h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        
+        .advantage-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        /* Block Diagram Section */
+        .diagram-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .diagram-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 16px;
+            padding: 80px 40px;
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .diagram-placeholder-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        
+        .diagram-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .diagram-placeholder p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .image-caption {
+            color: #718096;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        
+        /* BOM Section */
+        .bom-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .table-container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            margin-top: 50px;
+        }
+        
+        .table-header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 25px 30px;
+        }
+        
+        .table-header h3 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .product-table th {
+            background: #f7fafc;
+            color: #1a365d;
+            font-weight: 600;
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .product-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #edf2f7;
+            color: #4a5568;
+        }
+        
+        .product-table tr:hover {
+            background: #f7fafc;
+        }
+        
+        .product-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .part-number {
+            font-weight: 600;
+            color: #1a365d;
+            font-family: monospace;
+            background: #edf2f7;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        
+        .btn-table {
+            display: inline-block;
+            padding: 8px 18px;
+            background: #48bb78;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-table:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .solution-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .diagram-container {
+                padding: 30px 20px;
+            }
+            
+            .product-table {
+                font-size: 0.85rem;
+            }
+            
+            .product-table th,
+            .product-table td {
+                padding: 12px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,84 +356,144 @@
     </header>
 
     <main>
-        <section id="page-hero" class="hero-banner small-hero has-svg-bg solutions-banner">
+        <!-- Hero Section -->
+        <section class="solution-hero">
             <div class="container">
-                <h1>Industrial Inverter & Servo Control</h1>
-                <p>High-performance and precise motor control solutions.</p>
+                <div class="solution-hero-content">
+                    <h1>Industrial Inverter & Servo Control</h1>
+                    <p>High-performance and precise motor control solutions for demanding industrial environments</p>
+                </div>
             </div>
         </section>
 
-        <section id="solution-detail" class="section-padding">
+        <!-- Summary Section -->
+        <section class="summary-section">
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/">Home</a> &gt; <a href="/solutions.html">Solutions</a> &gt; Industrial Inverter & Servo Control
                 </div>
-                <h2>Solution Summary</h2>
-                <p>This GigaDevice-based solution provides a robust and efficient platform for industrial inverter and servo control applications. Leveraging the high-performance GD32F303 and GD32F450 series MCUs, it delivers precise motor control, fast response times, and advanced communication capabilities essential for demanding industrial environments. The solution is designed for reliability and scalability, supporting a wide range of motor types and control algorithms.</p>
+                <div class="section-header">
+                    <h2>Solution Summary</h2>
+                </div>
+                <p class="summary-text">This GigaDevice-based solution provides a robust and efficient platform for industrial inverter and servo control applications. Leveraging the high-performance GD32F303 and GD32F450 series MCUs, it delivers precise motor control, fast response times, and advanced communication capabilities essential for demanding industrial environments. The solution is designed for reliability and scalability, supporting a wide range of motor types and control algorithms.</p>
+            </div>
+        </section>
 
-                <h2>Solution Block Diagram</h2>
-                <!-- Consider lazy loading for images -->
-                <div class="solution-block-diagram">
-                    <img src="../images/industrial-inverter-block-diagram.svg" alt="Block Diagram for Industrial Inverter & Servo Control Solution">
+        <!-- Advantages Section -->
+        <section class="advantages-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Core Advantages</h2>
+                    <p>Key benefits of our industrial control solution</p>
+                </div>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">⚡</div>
+                        <h3>High-Performance MCUs</h3>
+                        <p>GD32F303/F450 series offer powerful processing for complex control algorithms with up to 200MHz operation.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🎯</div>
+                        <h3>Precise Motor Control</h3>
+                        <p>Advanced PWM and timer capabilities for accurate speed and position control with microsecond precision.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🔌</div>
+                        <h3>Robust Communication</h3>
+                        <p>Integrated interfaces like CAN, Ethernet, and UART for seamless industrial networking and monitoring.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🛡️</div>
+                        <h3>Enhanced Reliability</h3>
+                        <p>Designed for harsh industrial environments with extended temperature ranges and robust ESD protection.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">💰</div>
+                        <h3>Cost-Effective</h3>
+                        <p>Optimized BOM and efficient design reduce overall system cost without compromising performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block Diagram Section -->
+        <section class="diagram-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Solution Block Diagram</h2>
+                    <p>System architecture overview</p>
+                </div>
+                <div class="diagram-container">
+                    <div class="diagram-placeholder">
+                        <div class="diagram-placeholder-icon">🏭</div>
+                        <h3>Industrial Inverter & Servo Control</h3>
+                        <p>Block diagram showing the integration of GD32 MCUs, power stages, communication interfaces, and motor control algorithms</p>
+                    </div>
                     <p class="image-caption">Conceptual block diagram illustrating the key components of the industrial inverter and servo control solution.</p>
                 </div>
+            </div>
+        </section>
 
-                <h2>Core Advantages</h2>
-                <ul>
-                    <li>**High-Performance MCUs**: GD32F303/F450 series offer powerful processing for complex control algorithms.</li>
-                    <li>**Precise Motor Control**: Advanced PWM and timer capabilities for accurate speed and position control.</li>
-                    <li>**Robust Communication**: Integrated interfaces like CAN, Ethernet, and UART for industrial networking.</li>
-                    <li>**Enhanced Reliability**: Designed for harsh industrial environments with extended temperature ranges and robust ESD protection.</li>
-                    <li>**Cost-Effective**: Optimized BOM and efficient design reduce overall system cost.</li>
-                </ul>
-
-                <h2>Recommended Bill of Materials (BOM) List</h2>
-                <div class="table-responsive">
+        <!-- BOM Section -->
+        <section class="bom-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recommended Bill of Materials</h2>
+                    <p>Key components for this solution</p>
+                </div>
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>BOM List - Industrial Inverter & Servo Control</h3>
+                    </div>
                     <table class="product-table">
                         <thead>
                             <tr>
                                 <th>Component</th>
-                                <th>Part No.</th>
+                                <th>Part Number</th>
                                 <th>Description</th>
-                                <th>Link to Product</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Main MCU</td>
-                                <td>GD32F450ZGT6</td>
-                                <td>High-performance ARM Cortex-M4 MCU for main control.</td>
-                                <td><a href="/products/gd32f450zgt6.html">View Details</a></td>
+                                <td><span class="part-number">GD32F450ZGT6</span></td>
+                                <td>High-performance ARM Cortex-M4 MCU for main control</td>
+                                <td><a href="/products/gd32f450zgt6.html" class="btn-table">View Details</a></td>
                             </tr>
                             <tr>
                                 <td>Auxiliary MCU</td>
-                                <td>GD32F303CCT6</td>
-                                <td>ARM Cortex-M4 MCU for peripheral control or safety functions.</td>
-                                <td><a href="/products/gd32f303cct6.html">View Details</a></td>
+                                <td><span class="part-number">GD32F303CCT6</span></td>
+                                <td>ARM Cortex-M4 MCU for peripheral control and safety</td>
+                                <td><a href="/products/gd32f303cct6.html" class="btn-table">View Details</a></td>
                             </tr>
                             <tr>
                                 <td>Flash Memory</td>
-                                <td>GD25Q128CSIG</td>
-                                <td>128Mb SPI NOR Flash for code and data storage.</td>
-                                <td><a href="/products/gd25q128csig.html">View Details</a></td>
+                                <td><span class="part-number">GD25Q128CSIG</span></td>
+                                <td>128Mb SPI NOR Flash for code and data storage</td>
+                                <td><a href="/products/gd25q128csig.html" class="btn-table">View Details</a></td>
                             </tr>
                             <tr>
-                                <td>Power Management IC</td>
-                                <td>(Placeholder PMIC)</td>
-                                <td>Efficient power supply for the system.</td>
-                                <td><a href="/products/analog-power.html">View Analog & Power</a></td>
+                                <td>Power Management</td>
+                                <td><span class="part-number">GD30xx</span></td>
+                                <td>Efficient power supply management IC</td>
+                                <td><a href="/products/analog-power.html" class="btn-table">View Details</a></td>
                             </tr>
-                            <!-- More BOM items can be added -->
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </section>
 
-                <div class="cta-section text-center mt-4">
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
                     <h2>Need a Custom Solution?</h2>
-                    <p>Contact our technical team to discuss your specific industrial control requirements.</p>
+                    <p>Contact our technical team to discuss your specific industrial control requirements</p>
                     <div class="cta-buttons">
-                        <a href="/contact-us.html?inquiry=technical" class="btn primary">Consult an Expert</a>
-                        <a href="/contact-us.html?inquiry=quote" class="btn secondary">Request a Quote</a>
+                        <a href="/contact-us.html?inquiry=technical" class="btn primary btn-large">Consult an Expert</a>
+                        <a href="/contact-us.html?inquiry=quote" class="btn secondary btn-large">Request a Quote</a>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,218 @@
     <meta name="description" content="Comprehensive selection guides to help you choose the right GigaDevice MCU, Flash, or other components for your project.">
     <meta name="keywords" content="GigaDevice selection guide, MCU selection, Flash selection, GD32 selection, Litong support">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Support Detail Page Styles */
+        
+        /* Hero Section */
+        .support-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .support-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .support-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .support-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .support-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-header h2 {
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+        
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #4a5568;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Guides Grid */
+        .guides-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .guide-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #48bb78;
+        }
+        
+        .guide-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        
+        .guide-card h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .guide-card h3 a {
+            color: #1a365d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .guide-card h3 a:hover {
+            color: #48bb78;
+        }
+        
+        .guide-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .guide-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .guide-tag {
+            background: #fff;
+            color: #4a5568;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .guide-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+        
+        .guide-link:hover {
+            gap: 15px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .support-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -38,8 +250,23 @@
                             <li><a href="/solutions/optical-modules.html">Optical Modules</a></li>
                         </ul>
                     </li>
-                    <li><a href="/support.html">Support</a></li>
-                    <li><a href="/news.html">News</a></li>
+                    <li class="has-dropdown">
+                        <a href="/support.html">Support</a>
+                        <ul class="dropdown">
+                            <li><a href="/support/selection-guides.html">Selection Guides</a></li>
+                            <li><a href="/support/application-notes.html">Application Notes</a></li>
+                            <li><a href="/support/migration-guides.html">Migration Guides</a></li>
+                            <li><a href="/support/development-tools.html">Development Tools</a></li>
+                            <li><a href="/support/datasheets.html">Datasheets</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/news.html">News</a>
+                        <ul class="dropdown">
+                            <li><a href="/news/corporate.html">Corporate News</a></li>
+                            <li><a href="/news/industry-trends.html">Industry Trends</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/about-us.html">About Us</a></li>
                     <li><a href="/contact-us.html">Contact Us</a></li>
                 </ul>
@@ -48,69 +275,106 @@
     </header>
 
     <main>
-        <section id="page-hero" class="hero-banner small-hero has-svg-bg support-banner">
+        <!-- Hero Section -->
+        <section class="support-hero">
             <div class="container">
-                <h1>Selection Guides</h1>
-                <p>Find the perfect GigaDevice component for your design.</p>
+                <div class="support-hero-content">
+                    <h1>Selection Guides</h1>
+                    <p>Find the perfect GigaDevice component for your design</p>
+                </div>
             </div>
         </section>
 
-        <section id="selection-guides-list" class="section-padding">
+        <!-- Intro Section -->
+        <section class="intro-section">
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/">Home</a> &gt; <a href="/support.html">Support</a> &gt; Selection Guides
                 </div>
-                <h2>GigaDevice Product Selection Guides</h2>
-                <p>Our comprehensive selection guides are designed to assist engineers and developers in choosing the most suitable GigaDevice microcontrollers, Flash memory, and other components for their specific application requirements. These guides provide detailed comparisons, feature highlights, and application recommendations to streamline your design process.</p>
+                <div class="section-header">
+                    <h2>GigaDevice Product Selection Guides</h2>
+                </div>
+                <p class="intro-text">Our comprehensive selection guides are designed to assist engineers and developers in choosing the most suitable GigaDevice microcontrollers, Flash memory, and other components for their specific application requirements. These guides provide detailed comparisons, feature highlights, and application recommendations to streamline your design process.</p>
+            </div>
+        </section>
 
-                <div class="article-list grid-2">
-                    <div class="news-item">
+        <!-- Guides Section -->
+        <section class="guides-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Available Selection Guides</h2>
+                    <p>Browse our collection of technical guides</p>
+                </div>
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <div class="guide-icon">📋</div>
                         <h3><a href="/support/gd32-vs-stm32-cross-reference.html">GD32 vs STM32 Cross Reference Guide</a></h3>
-                        <p>A detailed comparison and migration guide for engineers transitioning from STM32 to GD32 MCUs.</p>
-                        <div class="tags">
-                            <span>#GD32</span> <span>#STM32</span> <span>#Migration</span> <span>#MCU</span>
+                        <p>A detailed comparison and migration guide for engineers transitioning from STM32 to GD32 MCUs, including pin-to-pin compatibility and software considerations.</p>
+                        <div class="guide-tags">
+                            <span class="guide-tag">#GD32</span>
+                            <span class="guide-tag">#STM32</span>
+                            <span class="guide-tag">#Migration</span>
                         </div>
+                        <a href="/support/gd32-vs-stm32-cross-reference.html" class="guide-link">View Guide →</a>
                     </div>
-                    <div class="news-item">
+                    <div class="guide-card">
+                        <div class="guide-icon">🎯</div>
                         <h3><a href="/support/how-to-choose-gd32-mcu.html">How to Choose the Right GD32 MCU</a></h3>
-                        <p>A step-by-step guide to selecting the optimal GD32 microcontroller based on performance, power, and peripherals.</p>
-                        <div class="tags">
-                            <span>#GD32</span> <span>#MCU</span> <span>#Selection</span> <span>#LowPower</span>
+                        <p>A step-by-step guide to selecting the optimal GD32 microcontroller based on performance requirements, power consumption, and peripheral needs.</p>
+                        <div class="guide-tags">
+                            <span class="guide-tag">#GD32</span>
+                            <span class="guide-tag">#MCU</span>
+                            <span class="guide-tag">#Selection</span>
                         </div>
+                        <a href="/support/how-to-choose-gd32-mcu.html" class="guide-link">View Guide →</a>
                     </div>
-                    <div class="news-item">
+                    <div class="guide-card">
+                        <div class="guide-icon">💾</div>
                         <h3><a href="/support/how-to-choose-spi-nor-flash.html">How to Choose the Right SPI NOR Flash</a></h3>
-                        <p>Guidance on selecting the appropriate GigaDevice SPI NOR Flash memory for your storage needs.</p>
-                        <div class="tags">
-                            <span>#Flash</span> <span>#SPINOR</span> <span>#Memory</span> <span>#Selection</span>
+                        <p>Guidance on selecting the appropriate GigaDevice SPI NOR Flash memory for your storage needs, including density, speed, and package considerations.</p>
+                        <div class="guide-tags">
+                            <span class="guide-tag">#Flash</span>
+                            <span class="guide-tag">#SPI NOR</span>
+                            <span class="guide-tag">#Memory</span>
                         </div>
+                        <a href="/support/how-to-choose-spi-nor-flash.html" class="guide-link">View Guide →</a>
                     </div>
-                    <div class="news-item">
-                        <h3><a href="/support/gd32-power-management-guide.html">GigaDevice Power Management Selection Guide</a></h3>
-                        <p>An overview of GigaDevice's power management solutions and how to choose them.</p>
-                        <div class="tags">
-                            <span>#Analog</span> <span>#PowerManagement</span> <span>#PMIC</span>
+                    <div class="guide-card">
+                        <div class="guide-icon">⚡</div>
+                        <h3><a href="/support/gd32-power-management-guide.html">Power Management Selection Guide</a></h3>
+                        <p>An overview of GigaDevice's power management solutions and how to choose the right PMIC for your application requirements.</p>
+                        <div class="guide-tags">
+                            <span class="guide-tag">#Analog</span>
+                            <span class="guide-tag">#Power</span>
+                            <span class="guide-tag">#PMIC</span>
                         </div>
+                        <a href="/support/gd32-power-management-guide.html" class="guide-link">View Guide →</a>
                     </div>
-                    <div class="news-item">
-                        <h3><a href="/support/automotive-grade-components.html">Selecting Automotive-Grade GigaDevice Components</a></h3>
-                        <p>Key considerations for choosing GigaDevice MCUs and Flash for automotive applications.</p>
-                        <div class="tags">
-                            <span>#Automotive</span> <span>#GD32</span> <span>#Flash</span>
+                    <div class="guide-card">
+                        <div class="guide-icon">🚗</div>
+                        <h3><a href="/support/automotive-grade-components.html">Automotive-Grade Components Guide</a></h3>
+                        <p>Key considerations for choosing GigaDevice MCUs and Flash for automotive applications, including AEC-Q100 qualifications.</p>
+                        <div class="guide-tags">
+                            <span class="guide-tag">#Automotive</span>
+                            <span class="guide-tag">#AEC-Q100</span>
+                            <span class="guide-tag">#GD32</span>
                         </div>
+                        <a href="/support/automotive-grade-components.html" class="guide-link">View Guide →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final Call-to-Action Section -->
-        <section id="final-cta" class="section-padding bg-dark text-white text-center">
+        <!-- CTA Section -->
+        <section class="cta-section">
             <div class="container">
-                <h2>Still Need Help with Selection?</h2>
-                <p>Our FAE team can provide personalized recommendations and technical insights.</p>
-                <div class="cta-buttons">
-                    <a href="/contact-us.html?inquiry=technical" class="btn primary">Consult an FAE</a>
-                    <a href="/contact-us.html?inquiry=quote" class="btn secondary">Request a Quote</a>
+                <div class="cta-content">
+                    <h2>Still Need Help with Selection?</h2>
+                    <p>Our FAE team can provide personalized recommendations and technical insights for your specific project requirements.</p>
+                    <div class="cta-buttons">
+                        <a href="/contact-us.html?inquiry=technical" class="btn primary btn-large">Consult an FAE</a>
+                        <a href="/contact-us.html?inquiry=quote" class="btn secondary btn-large">Request a Quote</a>
+                    </div>
                 </div>
             </div>
         </section>
