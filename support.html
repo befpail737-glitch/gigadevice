@@ -7,6 +7,348 @@
     <meta name="description" content="Access comprehensive technical support for GigaDevice products, including selection guides, application notes, migration guides, and development tools from Litong.">
     <meta name="keywords" content="GigaDevice technical support, GD32 support, application notes, migration guides, development tools, Litong">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Support Page Specific Styles */
+        
+        /* Support Hero */
+        .support-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .support-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .support-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .support-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .support-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Quick Access Section */
+        .quick-access-section {
+            padding: 60px 0;
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .quick-access-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quick-access-card:hover {
+            transform: translateY(-5px);
+            border-color: #48bb78;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .quick-access-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+        
+        .quick-access-card h3 {
+            color: #1a365d;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .quick-access-card p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-header h2 {
+            color: #1a365d;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+        }
+        
+        .resource-header {
+            height: 160px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+        }
+        
+        .resource-icon {
+            font-size: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .resource-content {
+            padding: 35px 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-content h3 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        
+        .resource-content p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .resource-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .resource-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+        
+        .resource-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            gap: 15px;
+        }
+        
+        /* FAE Support Section */
+        .fae-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .fae-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .fae-text h2 {
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .fae-text p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .fae-benefits {
+            list-style: none;
+            margin-top: 25px;
+        }
+        
+        .fae-benefits li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+        
+        .fae-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background: #48bb78;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .fae-visual {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
+        
+        .fae-visual-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        
+        .fae-visual h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .fae-visual p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .support-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .support-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .support-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .support-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .support-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .fae-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .support-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,57 +405,168 @@
     </header>
 
     <main>
-        <section id="page-hero" class="hero-banner small-hero has-svg-bg support-banner">
+        <!-- Support Hero Section -->
+        <section class="support-hero">
             <div class="container">
-                <h1>Technical Support</h1>
-                <p>Comprehensive resources and expert assistance for GigaDevice products.</p>
+                <div class="support-hero-content">
+                    <h1>Technical Support</h1>
+                    <p>Comprehensive resources and expert assistance for GigaDevice products</p>
+                </div>
             </div>
         </section>
 
-        <section id="support-categories" class="section-padding">
+        <!-- Quick Access Section -->
+        <section class="quick-access-section">
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/">Home</a> &gt; Support
                 </div>
-                <h2>GigaDevice Technical Resources</h2>
-                <div class="grid-3">
-                    <div class="category-item">
+                <div class="quick-access-grid">
+                    <div class="quick-access-card">
+                        <div class="quick-access-icon">📋</div>
                         <h3>Selection Guides</h3>
-                        <p>Find the right GigaDevice product for your application with our detailed guides.</p>
-                        <a href="/support/selection-guides.html" class="btn-link">View Guides</a>
+                        <p>Find the right product for your application with our detailed selection guides.</p>
                     </div>
-                    <div class="category-item">
-                        <h3>Application Notes</h3>
-                        <p>In-depth documents on how to implement GigaDevice products in various applications.</p>
-                        <a href="/support/application-notes.html" class="btn-link">View App Notes</a>
-                    </div>
-                    <div class="category-item">
-                        <h3>Migration Guides</h3>
-                        <p>Seamlessly transition from other brands to GigaDevice with our migration resources.</p>
-                        <a href="/support/migration-guides.html" class="btn-link">View Guides</a>
-                    </div>
-                    <div class="category-item">
-                        <h3>Development Tools</h3>
-                        <p>Information and guides on using IDEs, programmers, and debuggers for GigaDevice.</p>
-                        <a href="/support/development-tools.html" class="btn-link">View Tools</a>
-                    </div>
-                    <div class="category-item">
+                    <div class="quick-access-card">
+                        <div class="quick-access-icon">📄</div>
                         <h3>Datasheets</h3>
-                        <p>Access official GigaDevice datasheets for detailed product specifications.</p>
-                        <a href="/support/datasheets.html" class="btn-link">Download Datasheets</a>
+                        <p>Access complete technical specifications and electrical characteristics.</p>
+                    </div>
+                    <div class="quick-access-card">
+                        <div class="quick-access-icon">🔄</div>
+                        <h3>Migration Guides</h3>
+                        <p>Seamlessly transition from other brands to GigaDevice solutions.</p>
+                    </div>
+                    <div class="quick-access-card">
+                        <div class="quick-access-icon">💬</div>
+                        <h3>FAE Support</h3>
+                        <p>Get direct assistance from our Field Application Engineers.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final Call-to-Action Section - Reusing from homepage -->
-        <section id="final-cta" class="section-padding bg-dark text-white text-center">
+        <!-- Resources Section -->
+        <section class="resources-section">
             <div class="container">
-                <h2>Need Direct Technical Assistance?</h2>
-                <p>Our Field Application Engineers (FAEs) are ready to answer your questions.</p>
-                <div class="cta-buttons">
-                    <a href="/contact-us.html?inquiry=technical" class="btn primary">Consult an FAE</a>
-                    <a href="/contact-us.html?inquiry=quote" class="btn secondary">Request a Quote</a>
+                <div class="section-header">
+                    <h2>GigaDevice Technical Resources</h2>
+                    <p>Everything you need to successfully implement GigaDevice products in your designs</p>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-icon">📋</span>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Selection Guides</h3>
+                            <p>Comprehensive guides to help you choose the right GigaDevice product for your specific application requirements.</p>
+                            <ul class="resource-features">
+                                <li>Product comparison tables</li>
+                                <li>Application-specific recommendations</li>
+                                <li>Parameter filtering tools</li>
+                            </ul>
+                            <a href="/support/selection-guides.html" class="resource-link">View Guides →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-icon">📚</span>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Application Notes</h3>
+                            <p>In-depth technical documents covering implementation details, best practices, and design recommendations.</p>
+                            <ul class="resource-features">
+                                <li>Hardware design guidelines</li>
+                                <li>Software integration tips</li>
+                                <li>Optimization techniques</li>
+                            </ul>
+                            <a href="/support/application-notes.html" class="resource-link">View App Notes →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-icon">🔄</span>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Migration Guides</h3>
+                            <p>Step-by-step resources for migrating from competitor products to GigaDevice alternatives.</p>
+                            <ul class="resource-features">
+                                <li>Pin-to-pin compatibility</li>
+                                <li>Software migration steps</li>
+                                <li>Performance comparisons</li>
+                            </ul>
+                            <a href="/support/migration-guides.html" class="resource-link">View Guides →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-icon">🛠️</span>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Development Tools</h3>
+                            <p>Information on IDEs, debuggers, programmers, and evaluation boards for GigaDevice products.</p>
+                            <ul class="resource-features">
+                                <li>IDE setup instructions</li>
+                                <li>Debugger configuration</li>
+                                <li>Evaluation board guides</li>
+                            </ul>
+                            <a href="/support/development-tools.html" class="resource-link">View Tools →</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-icon">📄</span>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Datasheets</h3>
+                            <p>Official GigaDevice datasheets with complete electrical characteristics, pinouts, and timing diagrams.</p>
+                            <ul class="resource-features">
+                                <li>Complete specifications</li>
+                                <li>Electrical characteristics</li>
+                                <li>Package information</li>
+                            </ul>
+                            <a href="/support/datasheets.html" class="resource-link">Download Datasheets →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAE Support Section -->
+        <section class="fae-section">
+            <div class="container">
+                <div class="fae-content">
+                    <div class="fae-text">
+                        <h2>Expert FAE Support</h2>
+                        <p>Our Field Application Engineering (FAE) team comprises experienced engineers with deep expertise in GigaDevice products and various application domains.</p>
+                        <p>Whether you need help with product selection, design review, or troubleshooting, our FAEs are ready to assist you throughout your project lifecycle.</p>
+                        <ul class="fae-benefits">
+                            <li>Design-in support and schematic review</li>
+                            <li>Technical troubleshooting assistance</li>
+                            <li>Product training and workshops</li>
+                            <li>Reference design consultation</li>
+                        </ul>
+                    </div>
+                    <div class="fae-visual">
+                        <div class="fae-visual-icon">👨‍💻</div>
+                        <h3>Ready to Help</h3>
+                        <p>Our FAE team is available to provide personalized technical support for your GigaDevice projects. Contact us today to connect with an expert.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="support-cta">
+            <div class="container">
+                <div class="support-cta-content">
+                    <h2>Need Direct Technical Assistance?</h2>
+                    <p>Our Field Application Engineers (FAEs) are ready to answer your questions and help you succeed with GigaDevice products.</p>
+                    <div class="cta-buttons">
+                        <a href="/contact-us.html?inquiry=technical" class="btn primary btn-large">Consult an FAE</a>
+                        <a href="/contact-us.html?inquiry=quote" class="btn secondary btn-large">Request a Quote</a>
+                    </div>
                 </div>
             </div>
         </section>

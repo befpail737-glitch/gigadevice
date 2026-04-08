@@ -3,10 +3,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GigaDevice Distributor_Authorized GD32 & Flash Agent_Litong (力�?</title>
-    <meta name="description" content="Litong is an authorized GigaDevice distributor, supplying the full range of GD32 MCUs, SPI NOR/NAND Flash Memory, and Sensors. We provide original parts, technical support, and competitive pricing. 力通是兆易创新(GigaDevice)官方授权代理商，提供GD32单片机及存储芯片全系产品�?>
-    <meta name="keywords" content="gigadevice distributor, GigaDevice代理�? GD32 distributor, SPI Flash distributor">
+    <title>GigaDevice Distributor_Authorized GD32 & Flash Agent_Litong (力通集团)</title>
+    <meta name="description" content="Litong is an authorized GigaDevice distributor, supplying the full range of GD32 MCUs, SPI NOR/NAND Flash Memory, and Sensors. We provide original parts, technical support, and competitive pricing. 力通是兆易创新(GigaDevice)官方授权代理商，提供GD32单片机及存储芯片全系产品。">
+    <meta name="keywords" content="gigadevice distributor, GigaDevice代理商, GD32 distributor, SPI Flash distributor">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Home Page Specific Styles */
+        
+        /* Enhanced Hero Section */
+        .hero-enhanced {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: #48bb78;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #48bb78;
+            display: block;
+        }
+        
+        .hero-stat .label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* Trust Badges Section */
+        .trust-section {
+            background: #fff;
+            padding: 40px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .trust-badge .icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Why Choose Us - Enhanced */
+        .why-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-header h2 {
+            color: #1a365d;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #48bb78;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+        }
+        
+        .feature-card h3 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        /* Products Section - Enhanced */
+        .products-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 180px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-info h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-info p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .product-link {
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+        
+        .product-link:hover {
+            gap: 10px;
+        }
+        
+        /* Solutions Section - Enhanced */
+        .solutions-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+        }
+        
+        .solutions-section .section-header h2 {
+            color: white;
+        }
+        
+        .solutions-section .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .solution-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .solution-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .solution-card p {
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .solution-link {
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #1a365d;
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-top: 10px;
+        }
+        
+        .stat-desc {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+        
+        /* News Section - Enhanced */
+        .news-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .news-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .news-image {
+            height: 200px;
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .news-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-date {
+            color: #48bb78;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .news-content h3 {
+            color: #1a365d;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .news-content p {
+            color: #4a5568;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .news-link {
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* CTA Section - Enhanced */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.5;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-large {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .trust-badges {
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,128 +532,237 @@
     </header>
 
     <main>
-        <!-- Hero Banner Section -->
-        <section id="hero-banner" class="hero-banner has-svg-bg home-banner">
-            <!-- Consider adding Schema.org for Organization or WebSite here -->
+        <!-- Enhanced Hero Banner Section -->
+        <section id="hero-banner" class="hero-banner hero-enhanced has-svg-bg home-banner">
             <div class="container">
-                <h1>Global Leading Fabless Supplier</h1>
-                <h2>GD32 MCU Ecosystem</h2>
-                <p>Litong Group is your authorized GigaDevice distributor, providing cutting-edge solutions and unparalleled support.</p>
-                <div class="cta-buttons">
-                    <a href="/products.html" class="btn primary">Explore Products</a>
-                    <a href="/contact-us.html?inquiry=quote" class="btn secondary">Get a Quote</a>
+                <div class="hero-content">
+                    <h1>Global Leading Fabless Supplier</h1>
+                    <div class="subtitle">GD32 MCU Ecosystem</div>
+                    <p>Litong Group is your authorized GigaDevice distributor, providing cutting-edge semiconductor solutions, unparalleled technical support, and a robust global supply chain for your innovation.</p>
+                    <div class="cta-buttons">
+                        <a href="/products.html" class="btn primary btn-large">Explore Products</a>
+                        <a href="/contact-us.html?inquiry=quote" class="btn secondary btn-large">Get a Quote</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="number">15+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="number">5000+</span>
+                            <span class="label">Global Customers</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="number">99%</span>
+                            <span class="label">On-Time Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges Section -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="icon">✓</span>
+                        <span>Authorized Distributor</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="icon">🌐</span>
+                        <span>Global Shipping</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="icon">🔒</span>
+                        <span>100% Genuine Products</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="icon">⚡</span>
+                        <span>Fast Technical Support</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Us Section -->
-        <section id="why-choose-us" class="section-padding bg-light">
+        <section class="why-section">
             <div class="container">
-                <h2>Why Choose Us</h2>
-                <div class="grid-3">
-                    <div class="feature-item">
+                <div class="section-header">
+                    <h2>Why Choose Us</h2>
+                    <p>As an authorized GigaDevice distributor, we provide more than just components. We deliver comprehensive solutions that accelerate your time-to-market.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
                         <h3>In-stock Inventory</h3>
-                        <p>Ready-to-ship components for your urgent needs.</p>
+                        <p>Ready-to-ship components for your urgent needs. Extensive warehouse stock ensures minimal lead times and uninterrupted production.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-card">
+                        <div class="feature-icon">👨‍💻</div>
                         <h3>Original Technical Support</h3>
-                        <p>Direct support from GigaDevice certified engineers.</p>
+                        <p>Direct support from GigaDevice certified FAE engineers. Get expert guidance on product selection, design-in, and troubleshooting.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
                         <h3>GD32 Selection & Alternatives</h3>
-                        <p>Expert guidance for optimal GD32 MCU selection and migration.</p>
+                        <p>Expert guidance for optimal GD32 MCU selection, migration from other brands, and pin-to-pin compatibility analysis.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Core Product Areas Section -->
-        <section id="core-product-areas" class="section-padding">
+        <section class="products-section">
             <div class="container">
-                <h2>Core Product Areas</h2>
-                <div class="grid-4">
-                    <div class="product-area-item">
-                        <img src="svg/icon-mcu.svg" alt="Microcontrollers Icon" width="48" height="48">
-                        <h3>Microcontrollers</h3>
-                        <p>GD32 MCUs (ARM Cortex-M, RISC-V)</p>
-                        <a href="/products/microcontrollers.html" class="btn-link">Learn More</a>
+                <div class="section-header">
+                    <h2>Core Product Areas</h2>
+                    <p>Comprehensive portfolio of GigaDevice semiconductor solutions for diverse applications</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🖥️</div>
+                        <div class="product-info">
+                            <h3>Microcontrollers</h3>
+                            <p>GD32 MCUs featuring ARM Cortex-M and RISC-V architectures. From entry-level to high-performance series.</p>
+                            <a href="/products/microcontrollers.html" class="product-link">Learn More →</a>
+                        </div>
                     </div>
-                    <div class="product-area-item">
-                        <img src="svg/icon-flash-memory.svg" alt="Flash Memory Icon" width="48" height="48">
-                        <h3>Flash Memory</h3>
-                        <p>SPI NOR/NAND Flash</p>
-                        <a href="/products/flash-memory.html" class="btn-link">Learn More</a>
+                    <div class="product-card">
+                        <div class="product-image">💾</div>
+                        <div class="product-info">
+                            <h3>Flash Memory</h3>
+                            <p>SPI NOR Flash and NAND Flash solutions. High-speed, low-power storage for code and data applications.</p>
+                            <a href="/products/flash-memory.html" class="product-link">Learn More →</a>
+                        </div>
                     </div>
-                    <div class="product-area-item">
-                        <img src="svg/icon-sensor.svg" alt="Sensors Icon" width="48" height="48">
-                        <h3>Sensors</h3>
-                        <p>Touch, Fingerprint, and more</p>
-                        <a href="/products/sensors.html" class="btn-link">Learn More</a>
+                    <div class="product-card">
+                        <div class="product-image">👆</div>
+                        <div class="product-info">
+                            <h3>Sensors</h3>
+                            <p>Touch sensors, fingerprint sensors, and more. Enable intuitive human-machine interfaces.</p>
+                            <a href="/products/sensors.html" class="product-link">Learn More →</a>
+                        </div>
                     </div>
-                    <div class="product-area-item">
-                        <img src="svg/icon-analog-power.svg" alt="Analog & Power Icon" width="48" height="48">
-                        <h3>Analog & Power</h3>
-                        <p>Power Management ICs</p>
-                        <a href="/products/analog-power.html" class="btn-link">Learn More</a>
+                    <div class="product-card">
+                        <div class="product-image">⚡</div>
+                        <div class="product-info">
+                            <h3>Analog & Power</h3>
+                            <p>Power Management ICs, DC-DC converters, and analog solutions for efficient power design.</p>
+                            <a href="/products/analog-power.html" class="product-link">Learn More →</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Solutions & Applications Section -->
-        <section id="solutions-applications" class="section-padding bg-light">
+        <!-- Solutions Section -->
+        <section class="solutions-section">
             <div class="container">
-                <h2>Solutions & Applications</h2>
-                <div class="grid-3">
-                    <div class="solution-item">
+                <div class="section-header">
+                    <h2>Solutions & Applications</h2>
+                    <p>Industry-specific solutions powered by GigaDevice technology</p>
+                </div>
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">🏭</div>
                         <h3>Industrial Automation</h3>
-                        <p>Robust solutions for demanding industrial environments.</p>
-                        <a href="/solutions/industrial-automation.html" class="btn-link">View Solution</a>
+                        <p>Robust solutions for PLCs, motor control, and industrial IoT. High reliability for demanding environments.</p>
+                        <a href="/solutions/industrial-automation.html" class="solution-link">View Solution →</a>
                     </div>
-                    <div class="solution-item">
+                    <div class="solution-card">
+                        <div class="solution-icon">📱</div>
                         <h3>Internet of Things (IoT)</h3>
-                        <p>Low-power, high-performance for connected devices.</p>
-                        <a href="/solutions/iot.html" class="btn-link">View Solution</a>
+                        <p>Low-power, high-performance MCUs for connected devices. Enable smart homes, cities, and industries.</p>
+                        <a href="/solutions/iot.html" class="solution-link">View Solution →</a>
                     </div>
-                    <div class="solution-item">
+                    <div class="solution-card">
+                        <div class="solution-icon">🚗</div>
                         <h3>Automotive Electronics</h3>
-                        <p>Reliable components for next-gen automotive systems.</p>
-                        <a href="/solutions/automotive-electronics.html" class="btn-link">View Solution</a>
+                        <p>Automotive-grade components for dashboard, body control, and ADAS applications. AEC-Q100 qualified.</p>
+                        <a href="/solutions/automotive-electronics.html" class="solution-link">View Solution →</a>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">📺</div>
+                        <h3>Consumer Electronics</h3>
+                        <p>Cost-effective solutions for wearables, home appliances, and multimedia devices.</p>
+                        <a href="/solutions/consumer-electronics.html" class="solution-link">View Solution →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">5000+</span>
+                        <div class="stat-label">Active Customers</div>
+                        <div class="stat-desc">Worldwide trust</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Countries Served</div>
+                        <div class="stat-desc">Global reach</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10000+</span>
+                        <div class="stat-label">Part Numbers</div>
+                        <div class="stat-desc">In stock</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <div class="stat-label">Quote Response</div>
+                        <div class="stat-desc">Fast service</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Latest News Section -->
-        <section id="latest-news" class="section-padding">
+        <section class="news-section">
             <div class="container">
-                <h2>Latest News</h2>
-                <div class="grid-2">
-                    <div class="news-item">
-                        <h3>GigaDevice Launches GD32H7 Series</h3>
-                        <p>Discover the new high-performance GD32H7 MCUs...</p>
-                        <a href="/news/gd32h7-launch.html" class="btn-link">Read More</a>
+                <div class="section-header">
+                    <h2>Latest News</h2>
+                    <p>Stay updated with the latest from GigaDevice and Litong Group</p>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-image">🚀</div>
+                        <div class="news-content">
+                            <div class="news-date">January 2025</div>
+                            <h3>GigaDevice Launches GD32H7 Series High-Performance MCUs</h3>
+                            <p>Discover the new high-performance GD32H7 MCUs featuring ARM Cortex-M7 core, delivering exceptional processing power for demanding applications.</p>
+                            <a href="/news/gd32h7-launch.html" class="news-link">Read More →</a>
+                        </div>
                     </div>
-                    <div class="news-item">
-                        <h3>Litong Group Expands GigaDevice Portfolio</h3>
-                        <p>New automotive-grade Flash memory now available...</p>
-                        <a href="/news/litong-expands-portfolio.html" class="btn-link">Read More</a>
+                    <div class="news-card">
+                        <div class="news-image">📈</div>
+                        <div class="news-content">
+                            <div class="news-date">December 2024</div>
+                            <h3>Litong Group Expands GigaDevice Portfolio</h3>
+                            <p>New automotive-grade Flash memory and sensor products now available. Enhanced inventory to support growing demand.</p>
+                            <a href="/news/litong-expands-portfolio.html" class="news-link">Read More →</a>
+                        </div>
                     </div>
                 </div>
-                <div class="text-center mt-4">
+                <div class="text-center">
                     <a href="/news.html" class="btn primary">View All News</a>
                 </div>
             </div>
         </section>
 
         <!-- Final Call-to-Action Section -->
-        <section id="final-cta" class="section-padding bg-dark text-white text-center">
+        <section class="cta-section">
             <div class="container">
-                <h2>Ready to Power Your Innovation?</h2>
-                <p>Contact us today for expert advice, competitive pricing, and reliable GigaDevice solutions.</p>
-                <div class="cta-buttons">
-                    <a href="/contact-us.html?inquiry=quote" class="btn primary">Request a Quote</a>
-                    <a href="/contact-us.html?inquiry=technical" class="btn secondary">Consult FAE</a>
+                <div class="cta-content">
+                    <h2>Ready to Power Your Innovation?</h2>
+                    <p>Contact us today for expert advice, competitive pricing, and reliable GigaDevice solutions. Our FAE team is ready to support your next project.</p>
+                    <div class="cta-buttons">
+                        <a href="/contact-us.html?inquiry=quote" class="btn primary btn-large">Request a Quote</a>
+                        <a href="/contact-us.html?inquiry=technical" class="btn secondary btn-large">Consult FAE Team</a>
+                    </div>
                 </div>
             </div>
         </section>

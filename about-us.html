@@ -7,6 +7,325 @@
     <meta name="description" content="Learn about Litong Group, an authorized GigaDevice distributor, our history, mission, FAE team expertise, and commitment to customer success.">
     <meta name="keywords" content="About Litong, GigaDevice distributor, company history, FAE team, authorized agent">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-intro {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .about-intro h2 {
+            color: #1a365d;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-intro .lead {
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #48bb78;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        /* Feature Cards */
+        .features-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #48bb78;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        /* Partnership Section */
+        .partnership-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 80px 0;
+        }
+        
+        .partnership-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .partnership-text h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .partnership-text p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .partnership-benefits {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .partnership-benefits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #2d3748;
+        }
+        
+        .partnership-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .partnership-visual {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .partnership-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .partnership-badge .badge-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .partnership-badge .badge-subtitle {
+            color: #48bb78;
+            font-size: 1rem;
+        }
+        
+        /* FAE Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .team-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .team-intro h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .team-card h4 {
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #48bb78;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .team-card p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Success Stories */
+        .stories-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .stories-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .story-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .story-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .story-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .story-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            background: #f7fafc;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .about-cta h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-cta p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .partnership-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-intro h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,52 +382,172 @@
     </header>
 
     <main>
+        <!-- Hero Banner -->
         <section id="page-hero" class="hero-banner small-hero has-svg-bg about-banner">
             <div class="container">
                 <h1>About Litong Group</h1>
-                <p>Your trusted partner for GigaDevice solutions.</p>
+                <p>Your trusted partner for GigaDevice solutions</p>
             </div>
         </section>
 
-        <section id="about-content" class="section-padding">
+        <!-- Intro Section -->
+        <section class="about-intro">
             <div class="container">
-                <div class="breadcrumb">
-                    <a href="/">Home</a> &gt; About Us
-                </div>
-                <h2>Our Story: Decades of Excellence in Electronics Distribution</h2>
-                <p>Litong Group has been a pivotal player in the electronics distribution industry for over [Number] years, building a reputation for reliability, technical expertise, and unparalleled customer service. Founded on the principles of integrity and innovation, we have consistently adapted to the dynamic semiconductor landscape, evolving to meet the complex needs of our global clientele.</p>
+                <h2>Decades of Excellence in Electronics Distribution</h2>
+                <p class="lead">Litong Group has been a pivotal player in the electronics distribution industry, building a reputation for reliability, technical expertise, and unparalleled customer service. Founded on the principles of integrity and innovation, we have consistently adapted to the dynamic semiconductor landscape.</p>
+            </div>
+        </section>
 
-                <h2>Our Mission & Vision</h2>
-                <p><strong>Mission:</strong> To empower our customers' innovation by providing seamless access to cutting-edge semiconductor solutions, backed by expert technical support and a robust supply chain.</p>
-                <p><strong>Vision:</strong> To be the leading authorized distributor for innovative semiconductor brands, recognized for our value-added services and our commitment to fostering long-term partnerships.</p>
-
-                <h2>Authorized GigaDevice Distributor: A Partnership Built on Trust</h2>
-                <p>As an officially authorized distributor of GigaDevice Semiconductor Inc., Litong Group is your direct gateway to GigaDevice's comprehensive portfolio of microcontrollers, Flash memory, and other advanced solutions. Our partnership ensures that you receive genuine GigaDevice products, direct factory support, and the latest product information. We are deeply integrated with GigaDevice's ecosystem, allowing us to provide superior technical assistance and competitive pricing.</p>
-
-                <h2>Our FAE Team: Your Technical Advantage</h2>
-                <p>At the heart of Litong Group's value proposition is our highly skilled Field Application Engineering (FAE) team. Comprising experienced engineers with deep expertise in GigaDevice products and various application domains, our FAEs are dedicated to supporting your design and development efforts. From initial product selection and design-in assistance to troubleshooting and optimization, our FAEs act as an extension of your engineering team, helping you overcome technical challenges and accelerate time-to-market.</p>
-
-                <h2>Awards & Recognitions</h2>
-                <p>Over the years, Litong Group has been honored with several industry awards and recognitions for our outstanding performance in distribution, customer service, and technical support. These accolades reflect our unwavering commitment to excellence and our dedication to our partners and customers.</p>
-                <!-- Placeholder for specific awards/logos -->
-
-                <h2>Customer Success Stories</h2>
-                <p>We pride ourselves on the success of our customers. While specific client names are confidential, our GigaDevice solutions have been instrumental in powering innovations across diverse sectors, including:</p>
-                <ul>
-                    <li>Industrial automation systems requiring high-performance MCUs and robust Flash memory.</li>
-                    <li>IoT devices demanding ultra-low-power microcontrollers and secure storage.</li>
-                    <li>Automotive electronics applications utilizing automotive-grade components for safety and reliability.</li>
-                    <li>Consumer electronics products benefiting from cost-effective and feature-rich GigaDevice solutions.</li>
-                </ul>
-                <p>These are just a few examples of how Litong Group, in partnership with GigaDevice, helps bring groundbreaking products to life.</p>
-
-                <div class="cta-section text-center mt-4">
-                    <h2>Partner with a Trusted GigaDevice Distributor</h2>
-                    <p>Experience the Litong Group difference for your next project.</p>
-                    <div class="cta-buttons">
-                        <a href="/contact-us.html" class="btn primary">Contact Us</a>
-                        <a href="/contact-us.html?inquiry=quote" class="btn secondary">Request a Quote</a>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <div class="stat-label">Years in Business</div>
                     </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5000+</span>
+                        <div class="stat-label">Customers Worldwide</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99%</span>
+                        <div class="stat-label">On-Time Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="features-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2 style="color: #1a365d; font-size: 2rem;">Our Mission & Vision</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Our Mission</h3>
+                        <p>To empower our customers' innovation by providing seamless access to cutting-edge semiconductor solutions, backed by expert technical support and a robust supply chain.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👁️</div>
+                        <h3>Our Vision</h3>
+                        <p>To be the leading authorized distributor for innovative semiconductor brands, recognized for our value-added services and our commitment to fostering long-term partnerships.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h3>Our Values</h3>
+                        <p>Integrity, innovation, and customer excellence drive everything we do. We believe in building lasting relationships through transparency, reliability, and exceptional service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Section -->
+        <section class="partnership-section">
+            <div class="container">
+                <div class="partnership-content">
+                    <div class="partnership-text">
+                        <h2>Authorized GigaDevice Distributor</h2>
+                        <p>As an officially authorized distributor of GigaDevice Semiconductor Inc., Litong Group is your direct gateway to GigaDevice's comprehensive portfolio of microcontrollers, Flash memory, and other advanced solutions.</p>
+                        <p>Our partnership ensures that you receive genuine GigaDevice products, direct factory support, and the latest product information. We are deeply integrated with GigaDevice's ecosystem.</p>
+                        <ul class="partnership-benefits">
+                            <li>Direct access to GigaDevice's full product portfolio</li>
+                            <li>Factory-authorized technical support</li>
+                            <li>Competitive pricing and flexible terms</li>
+                            <li>Guaranteed genuine products with full warranty</li>
+                            <li>Early access to new product releases</li>
+                        </ul>
+                    </div>
+                    <div class="partnership-visual">
+                        <div class="partnership-badge">
+                            <div class="badge-title">Authorized Partner</div>
+                            <div class="badge-subtitle">GigaDevice Semiconductor</div>
+                        </div>
+                        <p style="color: #4a5568; margin-top: 20px;">Trusted distributor since 2010</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAE Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="team-intro">
+                    <h2>Our FAE Team: Your Technical Advantage</h2>
+                    <p>Our highly skilled Field Application Engineering (FAE) team comprises experienced engineers with deep expertise in GigaDevice products and various application domains.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h4>Design-In Support</h4>
+                        <div class="team-role">Technical Consulting</div>
+                        <p>Expert guidance on product selection, schematic review, and design optimization for your specific application needs.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">🔧</div>
+                        <h4>Troubleshooting</h4>
+                        <div class="team-role">Problem Solving</div>
+                        <p>Quick resolution of technical issues with direct access to GigaDevice's engineering resources and documentation.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">📚</div>
+                        <h4>Training & Education</h4>
+                        <div class="team-role">Knowledge Transfer</div>
+                        <p>Comprehensive training on GigaDevice products, tools, and best practices to accelerate your team's expertise.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">🚀</div>
+                        <h4>Time-to-Market</h4>
+                        <div class="team-role">Project Acceleration</div>
+                        <p>Dedicated support to help you overcome technical challenges and bring your products to market faster.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="stories-section">
+            <div class="container">
+                <h2>Customer Success Stories</h2>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-icon">🏭</div>
+                        <h4>Industrial Automation</h4>
+                        <p>High-performance MCUs and robust Flash memory powering next-generation industrial control systems.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">📱</div>
+                        <h4>IoT & Smart Devices</h4>
+                        <p>Ultra-low-power microcontrollers and secure storage solutions for connected devices.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">🚗</div>
+                        <h4>Automotive Electronics</h4>
+                        <p>Automotive-grade components meeting strict safety and reliability standards.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">📺</div>
+                        <h4>Consumer Electronics</h4>
+                        <p>Cost-effective and feature-rich solutions for mass-market products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="about-cta">
+            <div class="container">
+                <h2>Partner with a Trusted GigaDevice Distributor</h2>
+                <p>Experience the Litong Group difference for your next project</p>
+                <div class="cta-buttons">
+                    <a href="/contact-us.html" class="btn primary">Contact Us</a>
+                    <a href="/contact-us.html?inquiry=quote" class="btn secondary">Request a Quote</a>
                 </div>
             </div>
         </section>

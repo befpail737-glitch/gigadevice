@@ -7,6 +7,251 @@
     <meta name="description" content="Discover GigaDevice-based solutions for various industries, including Industrial Automation, IoT, and Automotive Electronics, provided by Litong.">
     <meta name="keywords" content="GigaDevice solutions, Industrial Inverter, TWS Charging Case, Smart Metering, Automotive Dashboard, Optical Modules, Litong">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Solutions Page Specific Styles */
+        
+        /* Solutions Hero */
+        .solutions-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solutions-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .solutions-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .solutions-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .solutions-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Industries Grid */
+        .industries-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-header h2 {
+            color: #1a365d;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .solution-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+        }
+        
+        .solution-header {
+            height: 180px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+        }
+        
+        .solution-icon {
+            font-size: 4.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .solution-content {
+            padding: 35px 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .solution-content h3 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .solution-content p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .solution-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .solution-tag {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .solution-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #48bb78;
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+        
+        .solution-link:hover {
+            gap: 15px;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .benefit-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.3);
+        }
+        
+        .benefit-item h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        
+        .benefit-item p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .solutions-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solutions-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .solutions-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .solutions-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .solutions-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .solutions-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,57 +308,148 @@
     </header>
 
     <main>
-        <section id="page-hero" class="hero-banner small-hero has-svg-bg solutions-banner">
+        <!-- Solutions Hero Section -->
+        <section class="solutions-hero">
             <div class="container">
-                <h1>Our Solutions</h1>
-                <p>Innovative GigaDevice solutions tailored for your industry needs.</p>
+                <div class="solutions-hero-content">
+                    <h1>Our Solutions</h1>
+                    <p>Innovative GigaDevice solutions tailored for your industry needs. From industrial automation to consumer electronics.</p>
+                </div>
             </div>
         </section>
 
-        <section id="solution-categories" class="section-padding">
+        <!-- Industry Solutions Section -->
+        <section class="industries-section">
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/">Home</a> &gt; Solutions
                 </div>
-                <h2>Industry-Specific GigaDevice Solutions</h2>
-                <div class="grid-3">
-                    <div class="solution-item">
-                        <h3>Industrial Inverter & Servo Control</h3>
-                        <p>High-performance solutions for precise motor control and industrial automation.</p>
-                        <a href="/solutions/industrial-inverter-servo.html" class="btn-link">View Solution</a>
+                <div class="section-header">
+                    <h2>Industry-Specific GigaDevice Solutions</h2>
+                    <p>Discover how GigaDevice products power applications across diverse industries</p>
+                </div>
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <span class="solution-icon">🏭</span>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Industrial Inverter & Servo Control</h3>
+                            <p>High-performance solutions for precise motor control and industrial automation. Robust designs for demanding factory environments.</p>
+                            <div class="solution-tags">
+                                <span class="solution-tag">Motor Control</span>
+                                <span class="solution-tag">Industrial</span>
+                                <span class="solution-tag">High Performance</span>
+                            </div>
+                            <a href="/solutions/industrial-inverter-servo.html" class="solution-link">View Solution →</a>
+                        </div>
                     </div>
-                    <div class="solution-item">
-                        <h3>TWS Wireless Earbud Charging Case</h3>
-                        <p>Compact and efficient power management for portable audio devices.</p>
-                        <a href="/solutions/tws-charging-case.html" class="btn-link">View Solution</a>
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <span class="solution-icon">🎧</span>
+                        </div>
+                        <div class="solution-content">
+                            <h3>TWS Wireless Earbud Charging Case</h3>
+                            <p>Compact and efficient power management solutions for portable audio devices. Ultra-low power consumption for extended battery life.</p>
+                            <div class="solution-tags">
+                                <span class="solution-tag">Power Management</span>
+                                <span class="solution-tag">Low Power</span>
+                                <span class="solution-tag">Portable</span>
+                            </div>
+                            <a href="/solutions/tws-charging-case.html" class="solution-link">View Solution →</a>
+                        </div>
                     </div>
-                    <div class="solution-item">
-                        <h3>Smart Metering & Power Collection</h3>
-                        <p>Reliable and secure solutions for energy measurement and data acquisition.</p>
-                        <a href="/solutions/smart-metering.html" class="btn-link">View Solution</a>
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <span class="solution-icon">⚡</span>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Smart Metering & Power Collection</h3>
+                            <p>Reliable and secure solutions for energy measurement and data acquisition. Meeting industry standards for smart grid applications.</p>
+                            <div class="solution-tags">
+                                <span class="solution-tag">Smart Grid</span>
+                                <span class="solution-tag">Energy</span>
+                                <span class="solution-tag">Secure</span>
+                            </div>
+                            <a href="/solutions/smart-metering.html" class="solution-link">View Solution →</a>
+                        </div>
                     </div>
-                    <div class="solution-item">
-                        <h3>Automotive Central Control & Dashboard</h3>
-                        <p>Robust and safe components for advanced in-vehicle systems.</p>
-                        <a href="/solutions/automotive-dashboard.html" class="btn-link">View Solution</a>
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <span class="solution-icon">🚗</span>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Automotive Central Control & Dashboard</h3>
+                            <p>Robust and safe components for advanced in-vehicle systems. AEC-Q100 qualified MCUs for automotive applications.</p>
+                            <div class="solution-tags">
+                                <span class="solution-tag">Automotive</span>
+                                <span class="solution-tag">AEC-Q100</span>
+                                <span class="solution-tag">Safety</span>
+                            </div>
+                            <a href="/solutions/automotive-dashboard.html" class="solution-link">View Solution →</a>
+                        </div>
                     </div>
-                    <div class="solution-item">
-                        <h3>Optical Module Communication</h3>
-                        <p>High-speed and reliable solutions for optical network applications.</p>
-                        <a href="/solutions/optical-modules.html" class="btn-link">View Solution</a>
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <span class="solution-icon">📡</span>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Optical Module Communication</h3>
+                            <p>High-speed and reliable solutions for optical network applications. Supporting next-generation data center and telecom infrastructure.</p>
+                            <div class="solution-tags">
+                                <span class="solution-tag">High Speed</span>
+                                <span class="solution-tag">Telecom</span>
+                                <span class="solution-tag">Data Center</span>
+                            </div>
+                            <a href="/solutions/optical-modules.html" class="solution-link">View Solution →</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final Call-to-Action Section - Reusing from homepage -->
-        <section id="final-cta" class="section-padding bg-dark text-white text-center">
+        <!-- Benefits Section -->
+        <section class="benefits-section">
             <div class="container">
-                <h2>Have a Specific Project in Mind?</h2>
-                <p>Our experts can help you design and implement the perfect GigaDevice solution.</p>
-                <div class="cta-buttons">
-                    <a href="/contact-us.html?inquiry=technical" class="btn primary">Consult an Expert</a>
-                    <a href="/contact-us.html?inquiry=quote" class="btn secondary">Request a Quote</a>
+                <div class="section-header">
+                    <h2>Why Choose Our Solutions</h2>
+                    <p>Comprehensive support from design to deployment</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔧</div>
+                        <h3>Design Support</h3>
+                        <p>Expert FAE team provides schematic review and design optimization guidance</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📋</div>
+                        <h3>Reference Designs</h3>
+                        <p>Ready-to-use reference designs accelerate your product development</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧪</div>
+                        <h3>Testing & Validation</h3>
+                        <p>Comprehensive testing support to ensure your product meets specifications</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚀</div>
+                        <h3>Fast Time-to-Market</h3>
+                        <p>Streamlined processes and expert support help you launch faster</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="solutions-cta">
+            <div class="container">
+                <div class="solutions-cta-content">
+                    <h2>Have a Specific Project in Mind?</h2>
+                    <p>Our experts can help you design and implement the perfect GigaDevice solution for your unique requirements.</p>
+                    <div class="cta-buttons">
+                        <a href="/contact-us.html?inquiry=technical" class="btn primary btn-large">Consult an Expert</a>
+                        <a href="/contact-us.html?inquiry=quote" class="btn secondary btn-large">Request a Quote</a>
+                    </div>
                 </div>
             </div>
         </section>
