@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GD32 Migration Guide | STM32 to GD32 Transition | GigaDevice Distributor Support</title>
+    <meta name="description" content="Complete migration guide from STM32 to GD32 microcontrollers. Pin compatibility, code migration, peripheral differences, and technical support from authorized GigaDevice distributor. Free FAE assistance available.">
+    <meta name="keywords" content="GD32 migration guide, STM32 to GD32, GD32 vs STM32, microcontroller migration, GD32 code examples, GigaDevice support, MCU migration guide">
+    <link rel="canonical" href="https://gigadevice.elec-distributor.com/support/migration-guides/GD32-migration-guide.html">
+    <link rel="alternate" hreflang="en" href="https://gigadevice.elec-distributor.com/support/migration-guides/GD32-migration-guide.html">
+    
+    <!-- Schema.org Article Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Complete GD32 Migration Guide: Transitioning from STM32 to GigaDevice Microcontrollers",
+      "description": "Comprehensive technical guide for migrating from STM32 to GD32 microcontrollers, covering pin compatibility, code migration, peripheral differences, and best practices.",
+      "image": "https://gigadevice.elec-distributor.com/images/support/migration-guide.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Litong Group Technical Team",
+        "url": "https://gigadevice.elec-distributor.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Litong Group",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://gigadevice.elec-distributor.com/logo.png"
+        }
+      },
+      "datePublished": "2026-04-22",
+      "dateModified": "2026-04-22",
+      "proficiencyLevel": "Intermediate",
+      "dependencies": "Basic knowledge of ARM Cortex-M microcontrollers and embedded C programming"
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gigadevice.elec-distributor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Support",
+          "item": "https://gigadevice.elec-distributor.com/support.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Migration Guides",
+          "item": "https://gigadevice.elec-distributor.com/support/migration-guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "GD32 Migration Guide",
+          "item": "https://gigadevice.elec-distributor.com/support/migration-guides/GD32-migration-guide.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is GD32 compatible with STM32?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, GD32 microcontrollers are pin-to-pin compatible with equivalent STM32 models. The peripherals are highly compatible, making migration straightforward. Most code can be reused with minimal modifications. Litong provides free migration support and code examples."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I migrate from STM32F4 to GD32F4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Migrating from STM32F4 to GD32F4 involves: 1) Verify pin compatibility (they are pin-to-pin compatible), 2) Update startup files and linker scripts, 3) Modify register bit definitions if using direct register access, 4) Update peripheral initialization code for timing differences, 5) Test thoroughly. Litong provides detailed migration guides and FAE support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the main differences between STM32 and GD32?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Main differences: 1) GD32 typically runs at higher clock speeds (e.g., 168MHz vs 168MHz for F4 series), 2) Some peripheral register bit definitions differ, 3) Flash programming algorithms are different, 4) GD32 often has more SRAM in equivalent packages, 5) Price is typically 20-40% lower. Core architecture and instruction set are identical."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use STM32 HAL library with GD32?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "STM32 HAL cannot be used directly with GD32 due to register differences. However, GigaDevice provides GD32 Firmware Library (similar to Standard Peripheral Library) and GD32 HAL. The migration effort is similar to porting between different STM32 families. Litong provides code examples and migration templates."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Breadcrumb */
+        .breadcrumb { background: #f7fafc; padding: 15px 0; font-size: 0.9rem; }
+        .breadcrumb a { color: #1a365d; text-decoration: none; }
+        .breadcrumb span { color: #666; margin: 0 8px; }
+        
+        /* Header */
+        header { background: #1a365d; color: white; padding: 1rem 0; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 0.95rem; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; padding: 60px 0; text-align: center; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .article-header .subtitle { font-size: 1.2rem; color: #48bb78; margin-bottom: 20px; }
+        .article-meta { display: flex; justify-content: center; gap: 30px; font-size: 0.9rem; opacity: 0.9; }
+        
+        /* Article Content */
+        .article-content { padding: 50px 0; }
+        .article-content h2 { 
+            color: #1a365d; font-size: 1.8rem; margin: 40px 0 20px; 
+            padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;
+        }
+        .article-content h3 { 
+            color: #2c5282; font-size: 1.4rem; margin: 30px 0 15px; 
+        }
+        .article-content p { margin-bottom: 20px; font-size: 1.05rem; }
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; padding-left: 30px; 
+        }
+        .article-content li { margin-bottom: 10px; }
+        
+        /* Code Blocks */
+        .code-block { 
+            background: #1a202c; color: #e2e8f0; 
+            padding: 20px; border-radius: 8px; 
+            font-family: 'Consolas', 'Monaco', monospace; 
+            font-size: 0.9rem; overflow-x: auto; margin: 20px 0;
+        }
+        .code-comment { color: #68d391; }
+        .code-keyword { color: #63b3ed; }
+        
+        /* Info Boxes */
+        .info-box { 
+            background: #ebf8ff; border-left: 4px solid #4299e1; 
+            padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;
+        }
+        .info-box h4 { color: #2b6cb0; margin-bottom: 10px; }
+        
+        .warning-box { 
+            background: #fffaf0; border-left: 4px solid #ed8936; 
+            padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;
+        }
+        .warning-box h4 { color: #c05621; margin-bottom: 10px; }
+        
+        .tip-box { 
+            background: #f0fff4; border-left: 4px solid #48bb78; 
+            padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;
+        }
+        .tip-box h4 { color: #276749; margin-bottom: 10px; }
+        
+        /* Comparison Table */
+        .comparison-table { 
+            width: 100%; border-collapse: collapse; margin: 25px 0; 
+            font-size: 0.95rem;
+        }
+        .comparison-table th { 
+            background: #1a365d; color: white; padding: 12px; text-align: left; 
+        }
+        .comparison-table td { 
+            padding: 12px; border-bottom: 1px solid #e2e8f0; 
+        }
+        .comparison-table tr:nth-child(even) { background: #f7fafc; }
+        
+        /* Step Cards */
+        .step-card { 
+            background: #f7fafc; border: 1px solid #e2e8f0; 
+            border-radius: 10px; padding: 25px; margin: 20px 0;
+        }
+        .step-card h4 { 
+            color: #1a365d; font-size: 1.2rem; margin-bottom: 15px; 
+            display: flex; align-items: center; gap: 10px;
+        }
+        .step-number { 
+            background: #48bb78; color: white; 
+            width: 30px; height: 30px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-weight: bold;
+        }
+        
+        /* Support CTA */
+        .support-cta { 
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); 
+            color: white; padding: 40px; border-radius: 10px; 
+            text-align: center; margin: 40px 0;
+        }
+        .support-cta h3 { color: white; margin-bottom: 15px; }
+        .btn-white { 
+            background: white; color: #1a365d; 
+            padding: 12px 30px; text-decoration: none; 
+            border-radius: 6px; font-weight: 600; 
+            display: inline-block; margin-top: 15px;
+        }
+        
+        /* FAQ Section */
+        .faq-item { 
+            background: white; border: 1px solid #e2e8f0; 
+            border-radius: 8px; padding: 25px; margin-bottom: 15px;
+        }
+        .faq-item h4 { color: #1a365d; margin-bottom: 10px; }
+        
+        /* Footer */
+        footer { background: #1a365d; color: white; padding: 40px 0; margin-top: 60px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .footer-section h4 { margin-bottom: 15px; }
+        .footer-section a { color: #a0aec0; text-decoration: none; display: block; margin-bottom: 8px; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-meta { flex-direction: column; gap: 10px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/support.html">Support</a> <span>/</span>
+            <a href="/support/migration-guides.html">Migration Guides</a> <span>/</span>
+            <span>GD32 Migration Guide</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Litong Group</div>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/products.html">Products</a>
+                <a href="/support.html">Support</a>
+                <a href="/about-us.html">About</a>
+                <a href="/contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="container">
+            <h1>Complete GD32 Migration Guide</h1>
+            <p class="subtitle">Transitioning from STM32 to GigaDevice Microcontrollers</p>
+            <div class="article-meta">
+                <span>📅 Updated: April 2026</span>
+                <span>⏱️ Reading Time: 15 minutes</span>
+                <span>🎯 Level: Intermediate</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container">
+            <p><strong>Introduction:</strong> This comprehensive guide will help you successfully migrate your embedded projects from STM32 to GD32 microcontrollers. As an authorized GigaDevice distributor, Litong has assisted hundreds of customers through this transition. GD32 offers pin-compatible alternatives to STM32 with competitive pricing and often better availability.</p>
+
+            <div class="info-box">
+                <h4>💡 Why Migrate to GD32?</h4>
+                <ul>
+                    <li><strong>Cost Savings:</strong> 20-40% lower BOM cost compared to equivalent STM32</li>
+                    <li><strong>Better Availability:</strong> Shorter lead times and stable supply</li>
+                    <li><strong>Performance:</strong> Equal or better specifications in most cases</li>
+                    <li><strong>Pin Compatibility:</strong> Drop-in replacement for most applications</li>
+                </ul>
+            </div>
+
+            <h2>1. Migration Overview</h2>
+            
+            <h3>1.1 Compatibility Summary</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Compatibility</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Pinout</td>
+                    <td>✅ Pin-to-pin</td>
+                    <td>Identical package and pin assignment</td>
+                </tr>
+                <tr>
+                    <td>Core Architecture</td>
+                    <td>✅ Identical</td>
+                    <td>Both ARM Cortex-M</td>
+                </tr>
+                <tr>
+                    <td>Instruction Set</td>
+                    <td>✅ Identical</td>
+                    <td>Standard ARM Thumb-2</td>
+                </tr>
+                <tr>
+                    <td>Peripheral Features</td>
+                    <td>⚠️ Similar</td>
+                    <td>Minor register differences</td>
+                </tr>
+                <tr>
+                    <td>Flash Programming</td>
+                    <td>⚠️ Different</td>
+                    <td>Different algorithms required</td>
+                </tr>
+                <tr>
+                    <td>Library/HAL</td>
+                    <td>❌ Different</td>
+                    <td>GD32 has its own libraries</td>
+                </tr>
+            </table>
+
+            <h2>2. Step-by-Step Migration Process</h2>
+
+            <div class="step-card">
+                <h4><span class="step-number">1</span> Hardware Verification</h4>
+                <p>Before starting software migration, verify hardware compatibility:</p>
+                <ul>
+                    <li>Confirm pin-to-pin compatibility using datasheets</li>
+                    <li>Check power supply requirements (typically identical)</li>
+                    <li>Verify clock circuitry (GD32 may support higher frequencies)</li>
+                    <li>Review reset circuit requirements</li>
+                </ul>
+                
+                <div class="tip-box">
+                    <h4>💡 Pro Tip</h4>
+                    <p>GD32F4 series can typically run at higher clock speeds than equivalent STM32F4. Check if your application can benefit from increased performance.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4><span class="step-number">2</span> Development Environment Setup</h4>
+                <p>Prepare your development environment for GD32:</p>
+                <ul>
+                    <li>Download <strong>GD32 Firmware Library</strong> from GigaDevice website</li>
+                    <li>Install GD32 device support packs for your IDE (Keil, IAR, or STM32CubeIDE)</li>
+                    <li>Configure debugger settings (J-Link, ST-Link, or DAP-Link compatible)</li>
+                    <li>Update flash programming algorithms</li>
+                </ul>
+
+                <div class="code-block">
+<span class="code-comment">// Example: GD32F4xx standard peripheral library structure</span>
+<span class="code-comment">// Similar to STM32 Standard Peripheral Library</span>
+
+<span class="code-keyword">#include</span> "gd32f4xx.h"
+
+<span class="code-keyword">void</span> gpio_config(<span class="code-keyword">void</span>) {
+    <span class="code-comment">/* Enable GPIO clock */</span>
+    rcu_periph_clock_enable(RCU_GPIOA);
+    
+    <span class="code-comment">/* Configure PA0 as output */</span>
+    gpio_mode_set(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_0);
+    gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_0);
+}
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4><span class="step-number">3</span> Code Migration</h4>
+                <p>Key areas requiring code modifications:</p>
+                
+                <h4>A. Header Files and Definitions</h4>
+                <div class="code-block">
+<span class="code-comment">// STM32 style (before)</span>
+<span class="code-keyword">#include</span> "stm32f4xx.h"
+<span class="code-keyword">#define</span> LED_PIN GPIO_Pin_13
+
+<span class="code-comment">// GD32 style (after)</span>
+<span class="code-keyword">#include</span> "gd32f4xx.h"
+<span class="code-keyword">#define</span> LED_PIN GPIO_PIN_13
+                </div>
+
+                <h4>B. GPIO Configuration Differences</h4>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Operation</th>
+                        <th>STM32 (HAL)</th>
+                        <th>GD32 (SPL)</th>
+                    </tr>
+                    <tr>
+                        <td>Clock Enable</td>
+                        <td>__HAL_RCC_GPIOA_CLK_ENABLE()</td>
+                        <td>rcu_periph_clock_enable(RCU_GPIOA)</td>
+                    </tr>
+                    <tr>
+                        <td>Set Pin High</td>
+                        <td>HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET)</td>
+                        <td>gpio_bit_set(GPIOA, GPIO_PIN_0)</td>
+                    </tr>
+                    <tr>
+                        <td>Toggle Pin</td>
+                        <td>HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0)</td>
+                        <td>gpio_bit_write(GPIOA, GPIO_PIN_0, 
+                            (bit_status)(1-gpio_output_bit_get(GPIOA, GPIO_PIN_0)))</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="step-card">
+                <h4><span class="step-number">4</span> Peripheral-Specific Changes</h4>
+                
+                <h4>USART/UART Configuration</h4>
+                <div class="code-block">
+<span class="code-comment">// GD32 USART initialization example</span>
+<span class="code-keyword">void</span> usart_config(<span class="code-keyword">void</span>) {
+    <span class="code-comment">/* Enable clocks */</span>
+    rcu_periph_clock_enable(RCU_GPIOA);
+    rcu_periph_clock_enable(RCU_USART0);
+    
+    <span class="code-comment">/* Configure TX (PA9) and RX (PA10) */</span>
+    gpio_af_set(GPIOA, GPIO_AF_7, GPIO_PIN_9);
+    gpio_af_set(GPIOA, GPIO_AF_7, GPIO_PIN_10);
+    gpio_mode_set(GPIOA, GPIO_MODE_AF, GPIO_PUPD_PULLUP, GPIO_PIN_9);
+    gpio_mode_set(GPIOA, GPIO_MODE_AF, GPIO_PUPD_PULLUP, GPIO_PIN_10);
+    
+    <span class="code-comment">/* Configure USART */</span>
+    usart_deinit(USART0);
+    usart_baudrate_set(USART0, 115200U);
+    usart_receive_config(USART0, USART_RECEIVE_ENABLE);
+    usart_transmit_config(USART0, USART_TRANSMIT_ENABLE);
+    usart_enable(USART0);
+}
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Important Note</h4>
+                    <p>GD32 USART peripheral may have different register bit definitions compared to STM32. Always refer to GD32 reference manual for exact register configurations.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4><span class="step-number">5</span> Testing and Validation</h4>
+                <p>Thorough testing is crucial after migration:</p>
+                <ol>
+                    <li><strong>Basic Functionality:</strong> Verify GPIO, clocks, and basic peripherals</li>
+                    <li><strong>Communication:</strong> Test all communication interfaces (UART, SPI, I2C, CAN)</li>
+                    <li><strong>Timing:</strong> Verify timing-critical operations (PWM, ADC sampling)</li>
+                    <li><strong>Power:</strong> Measure power consumption under various modes</li>
+                    <li><strong>Stress Test:</strong> Run extended operation tests</li>
+                </ol>
+            </div>
+
+            <h2>3. Common Issues and Solutions</h2>
+
+            <h3>3.1 Flash Programming Issues</h3>
+            <div class="warning-box">
+                <h4>⚠️ Problem: Cannot program GD32 Flash</h4>
+                <p><strong>Solution:</strong> GD32 requires different flash programming algorithms than STM32. Download GD32 flash algorithms from GigaDevice website and install in your IDE.</p>
+            </div>
+
+            <h3>3.2 Clock Configuration</h3>
+            <div class="info-box">
+                <h4>💡 Clock Tree Differences</h4>
+                <p>GD32 clock tree is similar but register names may differ. Use GD32 Clock Configuration Tool (similar to STM32CubeMX) to generate initialization code.</p>
+            </div>
+
+            <h3>3.3 Interrupt Handling</h3>
+            <div class="code-block">
+<span class="code-comment">// GD32 interrupt configuration example</span>
+<span class="code-keyword">void</span> nvic_config(<span class="code-keyword">void</span>) {
+    <span class="code-comment">/* Configure NVIC */</span>
+    nvic_irq_enable(USART0_IRQn, 2, 0);
+    
+    <span class="code-comment">/* Enable USART interrupt */</span>
+    usart_interrupt_enable(USART0, USART_INT_RBNE);
+}
+
+<span class="code-comment">// Interrupt handler</span>
+<span class="code-keyword">void</span> USART0_IRQHandler(<span class="code-keyword">void</span>) {
+    <span class="code-keyword">if</span>(usart_interrupt_flag_get(USART0, USART_INT_FLAG_RBNE)) {
+        uint8_t data = usart_data_receive(USART0);
+        <span class="code-comment">/* Process received data */</span>
+    }
+}
+            </div>
+
+            <h2>4. Migration Tools and Resources</h2>
+
+            <h3>4.1 Available Resources from Litong</h3>
+            <ul>
+                <li><strong>Code Examples:</strong> Complete project examples for common peripherals</li>
+                <li><strong>Migration Templates:</strong> Side-by-side code comparison documents</li>
+                <li><strong>FAE Support:</strong> Free technical consultation for migration projects</li>
+                <li><strong>Evaluation Boards:</strong> Low-cost GD32 development boards available</li>
+            </ul>
+
+            <h3>4.2 GigaDevice Official Resources</h3>
+            <ul>
+                <li>GD32 Firmware Library (Standard Peripheral Library)</li>
+                <li>GD32 HAL Library (similar to STM32 HAL)</li>
+                <li>Reference Manuals and Datasheets</li>
+                <li>Application Notes for specific peripherals</li>
+            </ul>
+
+            <h2>5. Series-Specific Migration Notes</h2>
+
+            <h3>5.1 GD32F1xx vs STM32F1xx</h3>
+            <p>Most straightforward migration. Peripheral registers are nearly identical. Main differences in flash programming and RCC (clock) configuration.</p>
+
+            <h3>5.2 GD32F4xx vs STM32F4xx</h3>
+            <p>GD32F4 often supports higher clock speeds (up to 240MHz vs 180MHz for some STM32F4 variants). More SRAM available in equivalent packages.</p>
+
+            <h3>5.3 GD32E5xx vs STM32G4xx</h3>
+            <p>Both are high-performance series with advanced analog features. Careful review of ADC and comparator configurations recommended.</p>
+
+            <h2>6. Best Practices</h2>
+
+            <ol>
+                <li><strong>Start with a Peripheral:</strong> Migrate one peripheral at a time, test thoroughly before moving to the next</li>
+                <li><strong>Use Abstraction:</strong> Create abstraction layers to minimize future porting effort</li>
+                <li><strong>Version Control:</strong> Maintain separate branches for STM32 and GD32 versions during transition</li>
+                <li><strong>Documentation:</strong> Document all changes made during migration for future reference</li>
+                <li><strong>Prototyping:</strong> Use GD32 evaluation board before committing to PCB redesign</li>
+            </ol>
+
+            <div class="support-cta">
+                <h3>Need Migration Support?</h3>
+                <p>Our FAE team provides free assistance for STM32 to GD32 migration projects. We offer code review, debugging support, and technical consultation.</p>
+                <a href="mailto:support@litong-group.com?subject=GD32 Migration Support Request" class="btn-white">Contact FAE Team</a>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h4>Is GD32 compatible with STM32?</h4>
+                <p>Yes, GD32 microcontrollers are pin-to-pin compatible with equivalent STM32 models. The peripherals are highly compatible, making migration straightforward. Most code can be reused with minimal modifications. Litong provides free migration support and code examples.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do I migrate from STM32F4 to GD32F4?</h4>
+                <p>Migrating from STM32F4 to GD32F4 involves: 1) Verify pin compatibility (they are pin-to-pin compatible), 2) Update startup files and linker scripts, 3) Modify register bit definitions if using direct register access, 4) Update peripheral initialization code for timing differences, 5) Test thoroughly. Litong provides detailed migration guides and FAE support.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What are the main differences between STM32 and GD32?</h4>
+                <p>Main differences: 1) GD32 typically runs at higher clock speeds (e.g., 168MHz vs 168MHz for F4 series), 2) Some peripheral register bit definitions differ, 3) Flash programming algorithms are different, 4) GD32 often has more SRAM in equivalent packages, 5) Price is typically 20-40% lower. Core architecture and instruction set are identical.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I use STM32 HAL library with GD32?</h4>
+                <p>STM32 HAL cannot be used directly with GD32 due to register differences. However, GigaDevice provides GD32 Firmware Library (similar to Standard Peripheral Library) and GD32 HAL. The migration effort is similar to porting between different STM32 families. Litong provides code examples and migration templates.</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>📚 Related Resources</h4>
+                <ul>
+                    <li><a href="/products/microcontrollers.html">GD32 Microcontroller Product Line</a></li>
+                    <li><a href="/support/datasheets.html">GD32 Datasheets and Reference Manuals</a></li>
+                    <li><a href="/support/development-tools.html">Development Tools and Software</a></li>
+                    <li><a href="/support/application-notes.html">Application Notes</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <a href="/products/microcontrollers.html">Microcontrollers</a>
+                    <a href="/products/flash-memory.html">Flash Memory</a>
+                    <a href="/products/sensors.html">Sensors</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="/support/datasheets.html">Datasheets</a>
+                    <a href="/support/migration-guides.html">Migration Guides</a>
+                    <a href="/support/development-tools.html">Development Tools</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="/about-us.html">About Us</a>
+                    <a href="/authorization.html">Authorization</a>
+                    <a href="/facilities.html">Global Facilities</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:support@litong-group.com">support@litong-group.com</a>
+                    <a href="/contact-us.html">Contact Form</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid #2d3748;">
+                <p>&copy; 2026 Litong Group. Authorized GigaDevice Distributor.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
